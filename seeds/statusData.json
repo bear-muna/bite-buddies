@@ -1,0 +1,17 @@
+[
+    {
+        "description": "First-Round Interview",
+        "submit_date":  "2023-06-01",
+        "event": "2023-06-07"
+    },
+    {
+        "description": "Second-Round Interview",
+        "submit_date":  "2023-06-08",
+        "event": "2023-06-22"
+    },
+    {
+        "description": "Accepted",
+        "submit_date":  "2023-06-01",
+        "event": "2023-06-29"
+    }
+]
