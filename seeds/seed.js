@@ -18,7 +18,8 @@ const seedDatabase = async () => {
     for(const application of applicationData) {
         await Application.create({
             ...application,
-            user_id: users[Math.floor(Math.random() * users.length)].id,
+            // the way the user id and status id's are generated may need to be changed in the future
+            user_id: users[Math.floor(Math.random() * users.length)].id, 
             status_id: status[Math.floor(Math.random() * status.length)].id,
         });
     }
