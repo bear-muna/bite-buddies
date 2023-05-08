@@ -1,9 +1,12 @@
 const sequelize = require('../config/connection');
-const {User, Application, Status} = require('../models');
+const {User, Cuisine, Message, Profile, UserCuisine} = require('../models');
 
 const userData = require('./userData.json');
-const applicationData = require('./applicationData.json');
-const statusData = require('./statusData.json');
+const cuisineData = require('./cuisineData.json');
+const messageData = require('./messageData.json');
+const profileData = require('./profileData.json');
+const userCuisineData = require('./userCuisineData.json');
+
 
 const seedDatabase = async () => {
     await sequelize.sync({force: true});
@@ -13,16 +16,10 @@ const seedDatabase = async () => {
         returning: true,
     });
 
-    const status = await Status.bulkCreate(statusData);
-
-    for(const application of applicationData) {
-        await Application.create({
-            ...application,
-            // the way the user id and status id's are generated may need to be changed in the future
-            user_id: users[Math.floor(Math.random() * users.length)].id, 
-            status_id: status[Math.floor(Math.random() * status.length)].id,
-        });
-    }
+    const cuisines = await Cuisine.bulkCreate(cuisineData);
+    const messages = await Message.bulkCreate(messageData);
+    const profile = await Profile.bulkCreate(profileData);
+    const userCusines = await UserCuisine.bulkCreate(userCuisineData);
 
     process.exit(0);
 };

@@ -16,13 +16,6 @@ Cuisine.init(
             allowNull: false,
             unique: true,
         },
-        user_id: {
-            type: DataTypes.INTEGER,
-            references: {
-                model: 'User',
-                key: 'id'
-            }
-        }
     }, {
         sequelize,
         timestamps: false,

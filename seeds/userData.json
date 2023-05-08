@@ -1,16 +1,22 @@
 [
     {
         "username": "amman",
+        "first_name": "Amman",
+        "last_name": "Nega",
         "password": "password",
         "email": "amman@gmail.com"
     },
     {
         "username": "ej",
+        "first_name": "EJ",
+        "last_name": "Muna",
         "password": "password",
         "email": "ej@gmail.com"
     },
     {
         "username": "anjali",
+        "first_name": "Anjali",
+        "last_name": "Roland",
         "password": "password",
         "email": "anjali@gmail.com"
     }
