@@ -18,7 +18,7 @@ UserCuisine.init(
                 key: 'id'
             }
         },
-        cuiside_id: {
+        cuisine_id: {
             type: DataTypes.INTEGER,
             references: {
                 model: 'Cuisine',
