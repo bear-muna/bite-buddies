@@ -11,12 +11,12 @@ Application.belongsTo(User, {
     foreignKey: 'user_id'
 });
 
-Application.hasOne(Status, {
+Status.hasOne(Application, {
     foreignKey: 'status_id',
     onDelete: 'CASCADE'    
 });
 
-Status.hasOne(Application, {
+Application.belongsTo(Status, {
     foreignKey: 'status_id'
 });
 
