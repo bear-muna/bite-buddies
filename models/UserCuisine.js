@@ -1,9 +1,9 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Message extends Model {}
+class UserCuisine extends Model {}
 
-Message.init(
+UserCuisine.init(
     {
         id: {
             type: DataTypes.INTEGER,
@@ -11,30 +11,26 @@ Message.init(
             primaryKey: true,
             autoIncrement: true
         },
-        body: {
-            type: DataTypes.TEXT,
-            allowNull: false,
-        },
-        sender_id: {
+        user_id: {
             type: DataTypes.INTEGER,
             references: {
                 model: 'User',
                 key: 'id'
             }
         },
-        recipient_id: {
+        cuiside_id: {
             type: DataTypes.INTEGER,
             references: {
-                model: 'User',
+                model: 'Cuisine',
                 key: 'id'
             }
         }
     }, {
         sequelize,
-        timestamps: true,
+        timestamps: false,
         freezeTableName: true,
         underscored: true,
     }
-);
+)
 
-module.exports = Message;
+module.exports = UserCuisine;
