@@ -1,43 +1,27 @@
 const { Model, DataTypes } = require('sequelize');
-const bcrypt = require('bcrypt');
 const sequelize = require('../config/connection');
 
-class Application extends Model {}
+class UserCuisine extends Model {}
 
-Application.init(
+UserCuisine.init(
     {
         id: {
             type: DataTypes.INTEGER,
             allowNull: false,
             primaryKey: true,
-            autoIncrement: true,
-        },
-        position_title: {
-            type: DataTypes.STRING,
-            allowNull: false,
-        },
-        location: {
-            type: DataTypes.STRING,
-            allowNull: false,
-        },
-        company: {
-            type: DataTypes.STRING,
-            allowNull: false,
-        },
-        salary: {
-            type: DataTypes.DECIMAL,
+            autoIncrement: true
         },
         user_id: {
             type: DataTypes.INTEGER,
             references: {
                 model: 'User',
-                key: 'id',
+                key: 'id'
             }
         },
-        status_id: {
+        cuiside_id: {
             type: DataTypes.INTEGER,
             references: {
-                model: 'Status',
+                model: 'Cuisine',
                 key: 'id'
             }
         }
@@ -49,4 +33,4 @@ Application.init(
     }
 )
 
-module.exports = Application;
+module.exports = UserCuisine;

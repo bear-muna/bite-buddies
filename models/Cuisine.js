@@ -1,28 +1,27 @@
 const { Model, DataTypes } = require('sequelize');
-const bcrypt = require('bcrypt');
 const sequelize = require('../config/connection');
 
-class Status extends Model {}
+class Cuisine extends Model {}
 
-Status.init(
+Cuisine.init(
     {
         id: {
             type: DataTypes.INTEGER,
             allowNull: false,
             primaryKey: true,
-            autoIncrement: true,
+            autoIncrement: true
         },
-        description: {
-            type: DataTypes.TEXT,
+        name: {
+            type: DataTypes.STRING,
             allowNull: false,
+            unique: true,
         },
-        submit_date: {
-            type: DataTypes.DATE,
-            defaultValue: DataTypes.NOW,
-            allowNull: false,
-        },
-        event: {
-            type: DataTypes.DATE,
+        user_id: {
+            type: DataTypes.INTEGER,
+            references: {
+                model: 'User',
+                key: 'id'
+            }
         }
     }, {
         sequelize,
@@ -32,4 +31,4 @@ Status.init(
     }
 )
 
-module.exports = Status;
+module.exports = Cuisine;
