@@ -1,0 +1,36 @@
+const { Model, DataTypes } = require('sequelize');
+const bcrypt = require('bcrypt');
+const sequelize = require('../config/connection');
+
+class Profile extends Model {}
+
+Profile.init(
+    {
+        id: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+            primaryKey: true,
+            autoIncrement: true
+        },
+        location: {
+            type: DataTypes.STRING,
+            allowNull: false,
+        },
+        // picture: {
+        //     type: DataTypes.
+        // }
+        availability: {
+            type: DataTypes.TEXT,
+        },
+        allergies: {
+            type: DataTypes.TEXT
+        }
+    }, {
+        sequelize,
+        timestamps: false,
+        freezeTableName: true,
+        underscored: true,
+    }
+);
+
+module.exports = Profile;
