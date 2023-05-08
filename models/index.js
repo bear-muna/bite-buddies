@@ -1,23 +1,42 @@
 const User = require('./User');
-const Application = require('./Application');
-const Status = require('./Status');
+const Cuisine = require('./Cuisine');
+const Message = require('./Message');
+const Profile = require('./Profile');
+const UserCuisine = require('./UserCuisine');
 
-User.hasMany(Application, {
+User.hasOne(Profile, {
     onDelete: 'CASCADE',
     foreignKey: 'user_id'
 });
 
-Application.belongsTo(User, {
+Profile.belongsTo(User, {
     foreignKey: 'user_id'
 });
 
-Status.hasOne(Application, {
-    foreignKey: 'status_id',
-    onDelete: 'CASCADE'    
+User.belongsToMany(Cuisine, {
+    through: UserCuisine,
+    foreignKey: 'user_id'
 });
 
-Application.belongsTo(Status, {
-    foreignKey: 'status_id'
+Cuisine.belongsToMany(User, {
+    through: UserCuisine,
+    foreignKey: 'cuisine_id'
 });
 
-module.exports = { User, Application, Status }
+User.hasMany(Message, {
+    foreignKey: 'sender_id'
+});
+
+Message.belongsTo(User, {
+    foreignKey: 'sender_id'
+});
+
+User.hasMany(Message, {
+    foreignKey: 'recipient_id'
+});
+
+Message.belongsTo(User, {
+    foreignKey: 'recipient_id'
+});
+
+module.exports = { User, Cuisine, Message, Profile, UserCuisine };

@@ -23,6 +23,13 @@ Profile.init(
         },
         allergies: {
             type: DataTypes.TEXT
+        },
+        user_id: {
+            type: DataTypes.INTEGER,
+            references: {
+                model: 'User',
+                key: 'id'
+            }
         }
     }, {
         sequelize,
