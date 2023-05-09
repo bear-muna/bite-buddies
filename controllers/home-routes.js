@@ -4,11 +4,11 @@ const { User, Cuisine, Message, Profile, UserCuisine } = require('../models');
 // Homepage with Login option
 router.get('/', async (req, res) => {
     try {
-        if (req.session.LoggedIn) {
+        if (req.session.logged_in) {
             res.redirect('/dashboard');
             return;
         }
-        res.render('homepage', { loggedIn: req.session.logged_in })
+        res.render('homepage', { logged_in: req.session.logged_in })
     } catch (error) {
         console.log(error);
         res.status(500).json({ msg: "Error loading homepage", error });
@@ -46,7 +46,7 @@ router.get('/users/edit', async (req, res) => {
                 include: [Profile, Cuisine]
             });
             const user = dbUserData.map((u) => u.get({ plain: true }));
-            res.render('edit', { user, loggedIn: req.session.loggedIn });
+            res.render('edit', { user, logged_in: req.session.logged_in });
         }
         res.render('login');
     } catch (error) {
