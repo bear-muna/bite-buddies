@@ -1,4 +1,5 @@
 const router = require('express').Router();
+const withAuth = require('../utils/auth');
 const { User, Cuisine, Message, Profile, UserCuisine } = require('../models');
 
 // Homepage with Login option
@@ -39,16 +40,13 @@ router.get('/signup', async (req, res) => {
 });
 
 // Edit user profile
-router.get('/users/edit', async (req, res) => {
+router.get('/users/edit', withAuth(), async (req, res) => {
     try {
-        if (req.session.logged_in) {
-            const dbUserData = await User.findByPk(req.session.user_id, {
-                include: [Profile, Cuisine]
-            });
-            const user = dbUserData.map((u) => u.get({ plain: true }));
-            res.render('edit', { user, logged_in: req.session.logged_in });
-        }
-        res.render('login');
+        const dbUserData = await User.findByPk(req.session.user_id, {
+            include: [Profile, Cuisine]
+        });
+        const user = dbUserData.map((u) => u.get({ plain: true }));
+        res.render('edit', { user, logged_in: req.session.logged_in });
     } catch (error) {
         console.log(error);
         res.status(500).json({ msg: "Error loading edit page", error })
@@ -69,7 +67,7 @@ router.get('/profiles/:id', async (req, res) => {
 });
 
 // GET messages between 2 Users
-router.get('/messages/:sendID/:recID', async (req, res) => {
+router.get('/messages/:sendID/:recID', withAuth(), async (req, res) => {
     try {
         const dbSenderData = await Message.findAll({
             where: {
