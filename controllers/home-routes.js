@@ -8,7 +8,7 @@ router.get('/', async (req, res) => {
             res.redirect('/dashboard');
             return;
         }
-        res.render('homepage', { loggedIn: req.session.loggedIn })
+        res.render('homepage', { loggedIn: req.session.logged_in })
     } catch (error) {
         console.log(error);
         res.status(500).json({ msg: "Error loading homepage", error });
@@ -17,7 +17,7 @@ router.get('/', async (req, res) => {
 
 // Login route
 router.get('/login', async (req, res) => {
-    if (req.session.loggedIn) {
+    if (req.session.logged_in) {
         res.redirect('/dashboard');
         return;
     }
@@ -31,6 +31,24 @@ router.get('/signup', async (req, res) => {
     } catch (error) {
         console.log(error);
         res.status(500).json({ msg: "Error loading signup page", error });
+    }
+});
+
+// Edit user profile
+router.get('/users/edit', async (req, res) => {
+    try {
+        if (req.session.logged_in) {
+            const dbUserData = await User.findByPk(req.session.user_id, {
+                include: [Profile, Cuisine]
+            });
+            const user = dbUserData.map((u) => u.get({ plain: true }));
+            res.render('edit', { user, loggedIn: req.session.loggedIn });
+        } else {
+            res.status(400).json({ msg: "Need to log in to edit your profile!" });
+        }
+    } catch (error) {
+        console.log(error);
+        res.status(500).json({ msg: "Error loading edit page", error })
     }
 });
 
