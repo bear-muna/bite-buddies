@@ -16,6 +16,20 @@ router.get('/', async (req, res) => {
     }
 });
 
+// Dashboard
+router.get('/dashboard', withAuth, async (req, res) => {
+    try {
+        const dbUserData = await User.findByPk(req.session.user_id);
+
+        const user = dbUserData.get({ plain: true });
+
+        res.render('dashboard', { user, logged_in: req.session.logged_in });
+    } catch (error) {
+        console.log(error);
+        res.status(500).json({ msg: "Error loading dashboard", error })
+    }
+})
+
 // Login route
 router.get('/login', async (req, res) => {
     if (req.session.logged_in) {
@@ -40,7 +54,7 @@ router.get('/signup', async (req, res) => {
 });
 
 // Edit user profile
-router.get('/users/edit', withAuth(), async (req, res) => {
+router.get('/users/edit', withAuth, async (req, res) => {
     try {
         const dbUserData = await User.findByPk(req.session.user_id, {
             include: [Profile, Cuisine]
@@ -59,7 +73,8 @@ router.get('/profiles/:id', async (req, res) => {
         const dbUserData = await User.findByPk(req.params.id, {
             include: [Profile, Cuisine],
         });
-        res.json(dbUserData);
+        const user = dbUserData.map((u) => u.get({ plain: true }));
+        res.render('profile', { user, logged_in: req.session.logged_in });
     } catch (error) {
         console.log(error);
         res.status(500).json({ msg: "Error loading profile", error });
@@ -67,7 +82,7 @@ router.get('/profiles/:id', async (req, res) => {
 });
 
 // GET messages between 2 Users
-router.get('/messages/:sendID/:recID', withAuth(), async (req, res) => {
+router.get('/messages/:sendID/:recID', withAuth, async (req, res) => {
     try {
         const dbSenderData = await Message.findAll({
             where: {
@@ -94,6 +109,31 @@ router.get('/messages/:sendID/:recID', withAuth(), async (req, res) => {
         console.log(error);
         res.status(500).json({ msg: "Error loading profile", error });
     }
-})
+});
+
+// Get Profiles based on cuisine
+router.get('/search/cuisine/:id', withAuth, async (req, res) => {
+    try {
+        const dbUsersData = await User.findAll({
+            include: [
+                {
+                    model: Cuisine,
+                    where: {
+                        id: req.params.id,
+                    },
+                    through: {
+                        attributes: [],
+                    }
+                }
+            ]
+        });
+
+        res.json(dbUsersData);
+
+    } catch (error) {
+        console.log(error);
+        res.status(500).json({ msg: "Error loading profiles", error });
+    };
+});
 
 module.exports = router;
