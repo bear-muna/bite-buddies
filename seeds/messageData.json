@@ -3,5 +3,20 @@
         "body": "Love Thai food!",
         "sender_id": 1,
         "recipient_id": 2
+    },
+    {
+        "body": "Yeah Thai food is amazing!",
+        "sender_id": 2,
+        "recipient_id": 1
+    },
+    {
+        "body": "What other foods do you like?",
+        "sender_id": 2,
+        "recipient_id": 1
+    },
+    {
+        "body": "I love Korean BBQ!",
+        "sender_id": 1,
+        "recipient_id": 2
     }
 ]
