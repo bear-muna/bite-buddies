@@ -67,7 +67,8 @@ body {
     color: var(--purple);
 }
 
-.signup {
+.signup,
+.dashboard {
     border: 4px solid var(--light-pink);
     border-radius: 30px;
 }
