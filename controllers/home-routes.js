@@ -128,7 +128,8 @@ router.get('/search/cuisine/:id', withAuth, async (req, res) => {
             ]
         });
 
-        res.json(dbUsersData);
+        const user = dbUsersData.map((u) => u.get({ plain: true }));
+        res.render('search', { user, logged_in: req.session.logged_in });
 
     } catch (error) {
         console.log(error);
