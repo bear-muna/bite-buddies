@@ -40,7 +40,7 @@ router.get('/signup', async (req, res) => {
 });
 
 // Edit user profile
-router.get('/users/edit', withAuth(), async (req, res) => {
+router.get('/users/edit', withAuth, async (req, res) => {
     try {
         const dbUserData = await User.findByPk(req.session.user_id, {
             include: [Profile, Cuisine]
@@ -67,7 +67,7 @@ router.get('/profiles/:id', async (req, res) => {
 });
 
 // GET messages between 2 Users
-router.get('/messages/:sendID/:recID', withAuth(), async (req, res) => {
+router.get('/messages/:sendID/:recID', withAuth, async (req, res) => {
     try {
         const dbSenderData = await Message.findAll({
             where: {
