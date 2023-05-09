@@ -40,7 +40,7 @@ router.get('/signup', async (req, res) => {
 });
 
 // Edit user profile
-router.get('/users/edit', withAuth(), async (req, res) => {
+router.get('/users/edit', withAuth, async (req, res) => {
     try {
         const dbUserData = await User.findByPk(req.session.user_id, {
             include: [Profile, Cuisine]
@@ -59,7 +59,8 @@ router.get('/profiles/:id', async (req, res) => {
         const dbUserData = await User.findByPk(req.params.id, {
             include: [Profile, Cuisine],
         });
-        res.json(dbUserData);
+        const user = dbUserData.map((u) => u.get({ plain: true }));
+        res.render('profile', { user, logged_in: req.session.logged_in });
     } catch (error) {
         console.log(error);
         res.status(500).json({ msg: "Error loading profile", error });
@@ -67,7 +68,7 @@ router.get('/profiles/:id', async (req, res) => {
 });
 
 // GET messages between 2 Users
-router.get('/messages/:sendID/:recID', withAuth(), async (req, res) => {
+router.get('/messages/:sendID/:recID', withAuth, async (req, res) => {
     try {
         const dbSenderData = await Message.findAll({
             where: {
