@@ -27,6 +27,10 @@ router.get('/login', async (req, res) => {
 // Signup
 router.get('/signup', async (req, res) => {
     try {
+        if (req.session.logged_in) {
+            res.redirect('/dashboard');
+            return;
+        }
         res.render('signup');
     } catch (error) {
         console.log(error);
@@ -43,9 +47,8 @@ router.get('/users/edit', async (req, res) => {
             });
             const user = dbUserData.map((u) => u.get({ plain: true }));
             res.render('edit', { user, loggedIn: req.session.loggedIn });
-        } else {
-            res.status(400).json({ msg: "Need to log in to edit your profile!" });
         }
+        res.render('login');
     } catch (error) {
         console.log(error);
         res.status(500).json({ msg: "Error loading edit page", error })
