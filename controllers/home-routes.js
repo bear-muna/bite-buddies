@@ -23,4 +23,15 @@ router.get('/login', async (req, res) => {
     }
     res.render('login');
 })
+
+// Signup
+router.get('/signup', async (req, res) => {
+    try {
+        res.render('signup');
+    } catch (error) {
+        console.log(error);
+        res.status(500).json({ msg: "Error loading signup page", error });
+    }
+});
+
 module.exports = router;
