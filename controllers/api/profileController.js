@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const { Profile } = require('../../models');
 
+
 // create profile route
 router.post('/', async (req, res) => {
     try {
@@ -17,8 +18,9 @@ router.post('/', async (req, res) => {
         const profileData = await Profile.create(
             {
                 location: req.body.location,
+                picture: req.body.picture,
                 availability: req.body.availability,
-                allergies: req.body.allergies,
+                bio: req.body.bio,
                 user_id: req.session.user_id,
             }
         );
@@ -36,8 +38,9 @@ router.put('/', async (req, res) => {
         const profileData = await Profile.update(
             {
                 location: req.body.location,
+                picture: req.body.picture,
                 availability: req.body.availability,
-                allergies: req.body.allergies,
+                bio: req.body.bio,
             },
             {
                 where: {
