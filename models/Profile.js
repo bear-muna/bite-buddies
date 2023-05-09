@@ -15,13 +15,13 @@ Profile.init(
             type: DataTypes.STRING,
             allowNull: false,
         },
-        // picture: {
-        //     type: DataTypes.
-        // }
+        picture: {
+            type: DataTypes.STRING,
+        },
         availability: {
             type: DataTypes.TEXT,
         },
-        allergies: {
+        bio: {
             type: DataTypes.TEXT
         },
         user_id: {
