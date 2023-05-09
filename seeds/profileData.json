@@ -1,8 +1,9 @@
 [
     {
         "location": "Seattle",
+        "picture": "test-filename.jpg",
         "availability": "Anytime",
-        "allergies": "Peanut allergies",
+        "bio": "My favorite food is pizza!",
         "user_id": 1
     }
 ]
