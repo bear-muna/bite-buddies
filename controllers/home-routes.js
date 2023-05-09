@@ -55,4 +55,17 @@ router.get('/users/edit', async (req, res) => {
     }
 });
 
+// GET profile by ID
+router.get('/profiles/:id', async (req, res) => {
+    try {
+        const dbUserData = await User.findByPk(req.params.id, {
+            include: [Profile, Cuisine],
+        });
+        res.json(dbUserData);
+    } catch (error) {
+        console.log(error);
+        res.status(500).json({ msg: "Error loading profile", error });
+    }
+})
+
 module.exports = router;
