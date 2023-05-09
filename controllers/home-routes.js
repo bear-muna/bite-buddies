@@ -95,6 +95,28 @@ router.get('/messages/:sendID/:recID', withAuth, async (req, res) => {
         console.log(error);
         res.status(500).json({ msg: "Error loading profile", error });
     }
-})
+});
+
+// Get Profiles based on cuisine
+router.get('/search/cuisine/:id', withAuth, async (req, res) => {
+    try {
+        const dbUsersData = await User.findAll({
+            include: [
+                {
+                    model: Cuisine,
+                    through: UserCuisine
+                },
+            ],
+        });
+
+        res.json(dbUsersData);
+
+    } catch (error) {
+        console.log(object);
+        res.status(500).json({ msg: "Error loading profiles", error });
+    };
+});
+
+// TODO: Create Dashboard route
 
 module.exports = router;
