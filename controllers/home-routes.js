@@ -16,6 +16,20 @@ router.get('/', async (req, res) => {
     }
 });
 
+// Dashboard
+router.get('/dashboard', withAuth, async (req, res) => {
+    try {
+        const dbUserData = await User.findByPk(req.session.user_id);
+
+        const user = dbUserData.get({ plain: true });
+
+        res.render('dashboard', { user, logged_in: req.session.logged_in });
+    } catch (error) {
+        console.log(error);
+        res.status(500).json({ msg: "Error loading dashboard", error })
+    }
+})
+
 // Login route
 router.get('/login', async (req, res) => {
     if (req.session.logged_in) {
@@ -121,7 +135,5 @@ router.get('/search/cuisine/:id', withAuth, async (req, res) => {
         res.status(500).json({ msg: "Error loading profiles", error });
     };
 });
-
-// TODO: Create Dashboard route
 
 module.exports = router;
