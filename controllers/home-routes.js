@@ -104,15 +104,20 @@ router.get('/search/cuisine/:id', withAuth, async (req, res) => {
             include: [
                 {
                     model: Cuisine,
-                    through: UserCuisine
-                },
-            ],
+                    where: {
+                        id: req.params.id,
+                    },
+                    through: {
+                        attributes: [],
+                    }
+                }
+            ]
         });
 
         res.json(dbUsersData);
 
     } catch (error) {
-        console.log(object);
+        console.log(error);
         res.status(500).json({ msg: "Error loading profiles", error });
     };
 });
