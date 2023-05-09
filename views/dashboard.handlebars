@@ -1,0 +1,28 @@
+<div class="dashboard row justify-content-center">
+    <div class="dashboard-photo">
+        <!--
+        <img src="{{profile.picture}} ???????" alt="profile picture">
+        -->
+    </div>
+    <div class="dashboard-name">
+        <h1>{{user.first_name}} {{user.last_name}}</h1>
+        <h3>{{profile.location}}</h3>
+    </div>
+    <div class="bio">
+        <p>{{profile.bio}}</p>
+    </div>
+    <div class="favorite-cuisines">
+        <ul>
+            {{#each User.Cuisines}}
+            <li><button class="cuisine">{{name}}</button></li>
+            {{/each}}
+        </ul>
+    </div>
+    <div class="availability">
+        <p>{{profile.availability}}</p>
+    </div>
+    <div class="messages">
+        <button>Messages</button>
+    </div>
+    <button>Settings</button>
+</div>
