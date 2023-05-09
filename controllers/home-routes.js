@@ -15,4 +15,12 @@ router.get('/', async (req, res) => {
     }
 });
 
+// Login route
+router.get('/login', async (req, res) => {
+    if (req.session.loggedIn) {
+        res.redirect('/dashboard');
+        return;
+    }
+    res.render('login');
+})
 module.exports = router;
