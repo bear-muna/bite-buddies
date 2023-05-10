@@ -33,13 +33,19 @@
             <label for="availability-signup">Add Availability:</label> <br>
             <input class="form-input w-100" type="text" value="{{user.Profile.availability}}" id="availability-edit" placeholder="Enter some dates or times you're free to get a bite!">
         </div>
-        <div class="form-group">
-            <label for="cuisines-signup">Add your favorite cuisines!</label> <br>
-            <select name="cuisine-options" id="cuisines-edit">
-                {{#each cuisine}}
-                <option value="{{this.name}}">{{this.name}}</option>
-                {{/each}}
-            </select>
+            <div class="form-group col w-100 cuisine-favs container">
+                <label for="cuisines-signup">Add your favorite cuisines!</label> <br>
+                <div class="row checkbox-section">
+                    {{#each cuisine}}
+                    <div class="form-check col-3">
+                        <input class="form-check-input" type="checkbox" value="{{name}}" data-cuisine-id="{{id}}"></input>
+                        <label for="option" class="form-check-label">{{name}}</label>
+                    </div>
+                    {{/each}}
+                </div>
+            </div>
+        <div class="row w-50 align-items-center">
+            <button class="btn align-self-center" id="edit" type="submit">Edit</button>
         </div>
         <!-- photo upload -->
     </form>

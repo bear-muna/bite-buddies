@@ -32,10 +32,11 @@ router.post('/', async (req, res) => {
 // delete a cuisine
 router.delete('/', async (req, res) => {
     try {
-        const cuisineData = await Cuisine.destroy(
+        const cuisineData = await UserCuisine.destroy(
             {
                 where: {
-                    name: req.body.name,
+                    user_id: req.session.user_id,
+                    cuisine_id: req.body.cuisine_id,
                 },
             }
         );
