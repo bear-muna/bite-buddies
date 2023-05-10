@@ -4,7 +4,23 @@
         "cuisine_id": 1
     },
     {
+        "user_id": 2,
+        "cuisine_id": 1
+    },
+    {
         "user_id": 3,
+        "cuisine_id": 1
+    },
+    {
+        "user_id": 4,
+        "cuisine_id": 1
+    },
+    {
+        "user_id": 5,
+        "cuisine_id": 1
+    },
+    {
+        "user_id": 6,
         "cuisine_id": 1
     }
 ]

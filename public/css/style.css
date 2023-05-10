@@ -118,6 +118,16 @@ body {
     padding: 0;
 }
 
+.search {
+    border: 4px solid var(--purple);
+    border-radius: 30px;
+}
+
+.profile-name {
+    font-size: 24px;
+    font-weight: 800;
+}
+=======
 .profile-bio {
     border: 3px solid var(--purple);
     border-radius: 20px;
