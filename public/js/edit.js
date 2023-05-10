@@ -1,3 +1,15 @@
+let picture = '';
+
+var myWidget = cloudinary.createUploadWidget({
+  cloudName: 'dkuq7bvia', 
+  uploadPreset: 'e8akbvsl'}, (error, result) => { 
+    if (!error && result && result.event === "success") { 
+      console.log('Done! Here is the image info: ', result.info);
+      picture = result.info.url; 
+    }
+  }
+);
+
 const editProfileHandler = async (event) => {
     event.preventDefault();
 
@@ -30,7 +42,7 @@ const editProfileHandler = async (event) => {
 
     const profileResponse = await fetch('/api/profiles', {
         method: 'PUT',
-        body: JSON.stringify({location, availability, bio, user_id}),
+        body: JSON.stringify({location, availability, bio, picture, user_id}),
         headers: { 'Content-Type': 'application/json' },
     });
 
@@ -61,6 +73,9 @@ const editProfileHandler = async (event) => {
     });
 }
 
+document.getElementById("upload_widget").addEventListener("click", function(){
+    myWidget.open();
+  }, false);
 
 document
     .querySelector('#edit-profile')
