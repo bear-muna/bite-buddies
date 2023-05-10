@@ -9,7 +9,7 @@
     },
     {
         "user_id": 3,
-        "cuisine_id": 1
+        "cuisine_id": 13
     },
     {
         "user_id": 4,
@@ -22,5 +22,21 @@
     {
         "user_id": 6,
         "cuisine_id": 1
+    },
+    {
+        "user_id": 3,
+        "cuisine_id": 4 
+    }, 
+    {
+        "user_id": 3,
+        "cuisine_id": 10
+    },
+    {
+        "user_id": 3,
+        "cuisine_id": 1
+    },
+    {
+        "user_id": 3,
+        "cuisine_id": 9
     }
 ]
