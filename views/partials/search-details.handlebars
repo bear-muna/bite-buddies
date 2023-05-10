@@ -1,25 +1,27 @@
-<div class="col-3 search search-profile-card d-flex justify-content-around align-items-center p-2 m-2">
-    <div style="background-image: url({{Profile.picture}}); background-position: center; background-size: cover;" class="search-picture col-4 col-md-3 h-30 search">
-    </div>
-    <div class="col-8 d-flex flex-column justify-content-center align-items-center ">
-        <div>
+<a href="/profiles/{{id}}">
+    <div class="col-3 search search-profile-card d-flex justify-content-around align-items-center p-2 m-2">
+        <div style="background-image: url({{Profile.picture}}); background-position: center; background-size: cover;" class="search-picture col-4 col-md-3 h-30 search">
+        </div>
+        <div class="col-8 d-flex flex-column justify-content-center align-items-center ">
             <div>
-                <p class="search-profile-name">{{first_name}} {{last_name}}</p>
-                <p>{{Profile.location}}</p>
+                <div>
+                    <p class="search-profile-name">{{first_name}} {{last_name}}</p>
+                    <p>{{Profile.location}}</p>
+                </div>
+                <div>
+                    <p>BIO:</p>
+                    {{#if Profile.bio}}
+                    <p>{{Profile.bio}}</p>
+                    {{else}}
+                    <p>No bio</p>
+                    {{/if}}
+                </div>
             </div>
             <div>
-                <p>BIO:</p>
-                {{#if Profile.bio}}
-                <p>{{Profile.bio}}</p>
-                {{else}}
-                <p>No bio</p>
-                {{/if}}
+                {{#each Cuisines}}
+                    <p>{{name}}</p>
+                {{/each}}
             </div>
         </div>
-        <div>
-            {{#each Cuisines}}
-                <p>{{name}}</p>
-            {{/each}}
-        </div>
     </div>
-</div>
+</a>
