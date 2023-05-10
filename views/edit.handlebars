@@ -1,5 +1,9 @@
 <div class="row justify-content-center signup">
     <form class="form w-90 signup-form" id="edit-profile" data-user-id="{{user.id}}">
+        <div class="user-picture col-12 col-md-3 h-30">
+           <!-- photo upload --> 
+            <button id="upload_widget" type="button" class="cloudinary-button">Upload Picture</button>
+        </div>
         <div class="form-group">
             <label for="username-signup">Enter username:</label> <br>
             <input class="form-input w-100" type="text" value="{{user.username}}" id="username-edit">
@@ -47,8 +51,8 @@
         <div class="row w-50 align-items-center">
             <button class="btn align-self-center" id="edit" type="submit">Edit</button>
         </div>
-        <!-- photo upload -->
     </form>
 </div>
 
+<script src="https://upload-widget.cloudinary.com/global/all.js" type="text/javascript"></script>  
 <script src="/js/edit.js"></script>
