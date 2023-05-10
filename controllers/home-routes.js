@@ -129,6 +129,9 @@ router.get('/search/cuisine/:id', withAuth, async (req, res) => {
                     through: {
                         attributes: [],
                     }
+                },
+                {
+                    model: Profile,
                 }
             ]
         });
