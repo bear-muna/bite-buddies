@@ -1,28 +1,37 @@
-<div class="dashboard row justify-content-center">
-    <div class="dashboard-photo">
-        <!--
-        <img src="{{profile.picture}} ???????" alt="profile picture">
-        -->
+<div class="container-fluid dashboard">
+    <div class="d-flex flex-row-reverse">
+        <button class="btn" id="edit-btn">⚙️</button>
     </div>
-    <div class="dashboard-name">
-        <h1>{{user.first_name}} {{user.last_name}}</h1>
-        <h3>{{profile.location}}</h3>
-    </div>
-    <div class="bio">
-        <p>{{profile.bio}}</p>
-    </div>
-    <div class="favorite-cuisines">
+    <div class="row justify-content-center">
+        <div class="dashboard-photo col-12 col-md-3 h-30">
+            <!-- photo upload --> 
+        </div>
+        <div class="dashboard-name col-2 align-self-center">
+            <h1>{{user.first_name}} {{user.last_name}}</h1>
+            <h3>{{profile.location}}</h3>
+        </div>
+        <div class="bio col align-self-center">
+            <h3>Bio</h3>
+            <p class="profile-bio">{{profile.bio}}</p>
+        </div>
+    </div>    
+    <div class="row favorite-cuisines">
         <ul>
             {{#each User.Cuisines}}
-            <li><button class="cuisine">{{name}}</button></li>
+            <li><button class="cuisine" type="submit">{{name}}</button></li>
             {{/each}}
         </ul>
     </div>
-    <div class="availability">
-        <p>{{profile.availability}}</p>
+    <div class="row w-100">
+        <div class="col availability">
+            <h3>Availability</h3>
+            <p class="profile-availability">{{profile.availability}}</p>
+        </div>
+        <div class="col messages">
+            <h3>Messages</h3>
+            <button class="btn dash-messages position-relative w-100" type="button">  <span class="position-absolute top-0 start-100 translate-middle p-2 bg-danger border border-light rounded-circle">
+                <span class="visually-hidden">New alerts</span>
+            </span></button>
+        </div>
     </div>
-    <div class="messages">
-        <button class="btn message-btn">Messages</button>
-    </div>
-    <button class="settings-btn">Settings</button>
 </div>
