@@ -19,5 +19,26 @@
         "availability": "Weekends",
         "bio": "Why'd the chicken cross the road? To get food",
         "user_id": 3
+    },
+    {
+        "location": "Seattle",
+        "picture": "exm.jpg",
+        "availability": "Everyday",
+        "bio": "I'm really into Korean BBQ",
+        "user_id": 4
+    },
+    {
+        "location": "Tacoma",
+        "picture": "test.jpg",
+        "availability": "Weekends and Monday",
+        "bio": "I like to eat a lot",
+        "user_id": 5
+    },
+    {
+        "location": "Kent",
+        "picture": "test.jpg",
+        "availability": "Anytime",
+        "bio": "This is the last seed for profile",
+        "user_id": 6
     }
 ]
