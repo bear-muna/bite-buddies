@@ -15,6 +15,8 @@ router.post('/', async (req, res) => {
             return;
         }
 
+        req.session.pic = req.body.picture;
+
         const profileData = await Profile.create(
             {
                 location: req.body.location,
@@ -35,6 +37,13 @@ router.post('/', async (req, res) => {
 // update profile route
 router.put('/', async (req, res) => {
     try {
+
+        if (req.body.picture === '') {
+            req.body.picture = req.session.pic;
+        } else {
+            req.session.pic = req.body.picture;
+        }
+
         const profileData = await Profile.update(
             {
                 location: req.body.location,

@@ -41,6 +41,10 @@ const signupFormHandler = async (event) => {
         headers: { 'Content-Type': 'application/json' },
       });
       
+      if (picture === '') {
+        picture = '/images/blank-profile-pic.png';
+      }
+
       const response2 = await fetch('/api/profiles', {
         method: 'POST',
         body: JSON.stringify({ location, availability, picture, bio }),

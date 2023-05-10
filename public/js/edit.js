@@ -1,7 +1,7 @@
 let picture = '';
 
 var myWidget = cloudinary.createUploadWidget({
-  cloudName: 'dkuq7bvia', 
+  cloudName: 'dkuq7bvia',
   uploadPreset: 'e8akbvsl'}, (error, result) => { 
     if (!error && result && result.event === "success") { 
       console.log('Done! Here is the image info: ', result.info);
@@ -71,6 +71,8 @@ const editProfileHandler = async (event) => {
             });
         }
     });
+
+    document.location.replace('/dashboard');
 }
 
 document.getElementById("upload_widget").addEventListener("click", function(){

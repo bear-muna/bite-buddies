@@ -1,6 +1,6 @@
 <div class="row justify-content-center signup">
-    <form class="form w-90 signup-form" id="edit-profile" data-user-id="{{user.id}}">
-        <div class="user-picture col-12 col-md-3 h-30">
+    <form class="form w-90 signup-form" id="edit-profile" data-user-id="{{user.id}}" data-profile-picture="{{user.Profile.picture}}">
+        <div style="background-image: url({{user.Profile.picture}}); background-position: center; background-size: cover;" class="user-picture col-12 col-md-3 h-30">
            <!-- photo upload --> 
             <button id="upload_widget" type="button" class="cloudinary-button">Upload Picture</button>
         </div>
