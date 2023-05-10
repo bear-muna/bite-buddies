@@ -76,8 +76,7 @@ body {
     border-radius: 20px;
 }
 
-.user-picture,
-.dashboard-photo {
+.user-picture {
     border: 3px solid var(--purple);
     border-radius: 360px;
     margin: 3%;
@@ -132,17 +131,24 @@ body {
     font-weight: 800;
 }
 
-.search-picture {
+.search-picture,
+.dashboard-photo {
     border: 3px solid var(--purple);
     border-radius: 360px;
     margin: 3%;
     min-height: 10em;
 }
 
+.dashboard-photo {
+    min-height: 20rem;
+    min-width: auto;
+}
+
+ /* dasboard/profile styling */
 .profile-bio {
     border: 3px solid white;
     border-radius: 20px;
-    padding: 1%;
+    padding: 2%;
     min-height: 15vh;
     background-color: var(--purple);
     color: white;
@@ -156,11 +162,18 @@ body {
     margin: 1%;
     min-height: 15vh;
     background-color: var(--gold);
+    color: white;
 }
 
 .dash-messages {
     margin-top: 0;
     margin-bottom: 6%;
+}
+
+.dash-messages:hover {
+    color: var(gold);
+    border: 3px solid var(--gold);
+    background-color: white;
 }
 
 .favorite-cuisines {
@@ -197,3 +210,4 @@ body {
     text-shadow: 1px 1px var(--light-pink);
     color: var(--purple);
 }
+

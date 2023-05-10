@@ -3,8 +3,7 @@
         <button class="btn" id="edit-btn">⚙️</button>
     </div>
     <div class="row justify-content-center">
-        <div class="dashboard-photo col-12 col-md-3 h-30">
-            <!-- photo upload --> 
+        <div style="background-image: url({{user.Profile.picture}}); background-position: center; background-size: cover;" class="dashboard-photo col-3 col-md-4">
         </div>
         <div class="dashboard-name col-2 align-self-center">
             <h1>{{user.first_name}} {{user.last_name}}</h1>
