@@ -14,6 +14,8 @@ const signupFormHandler = async (event) => {
 
     const cuisine = document.querySelector('#cuisines-signup').value;
   
+    // TODO: Need to change based on cuisine check box instead of select menu
+    
     if  (
         (username && email && password) && 
         (location && firstName && lastName) && 
