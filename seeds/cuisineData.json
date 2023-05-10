@@ -1,6 +1,38 @@
 [
     {
-        "name": "Thai",
-        "user_id": 1
+        "name": "Thai"
+    },
+    {
+        "name": "Chinese"
+    },
+    {
+        "name": "Russian"
+    },
+    {
+        "name": "Mexican"
+    },
+    {
+        "name": "Greek"
+    },
+    {
+        "name": "Ethiopian"
+    },
+    {
+        "name": "Filipino"
+    },
+    {
+        "name": "Vietnamese"
+    },
+    {
+        "name": "Korean"
+    },
+    {
+        "name": "Japanese"
+    },
+    {
+        "name": "Puerto Rican"
+    },
+    {
+        "name": "Brazillian"
     }
 ]

@@ -135,11 +135,15 @@ router.get('/search/cuisine/:id', withAuth, async (req, res) => {
                     through: {
                         attributes: [],
                     }
+                },
+                {
+                    model: Profile,
                 }
             ]
         });
 
         const user = dbUsersData.map((u) => u.get({ plain: true }));
+        console.log(user);
         res.render('search', { user, logged_in: req.session.logged_in });
 
     } catch (error) {

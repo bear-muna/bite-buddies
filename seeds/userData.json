@@ -19,5 +19,26 @@
         "last_name": "Roland",
         "password": "password",
         "email": "anjali@gmail.com"
+    },
+    {
+        "username": "joe",
+        "first_name": "Joe",
+        "last_name": "Smith",
+        "password": "password",
+        "email": "joe@gmail.com"
+    },
+    {
+        "username": "henry",
+        "first_name": "Henry",
+        "last_name": "Larrington",
+        "password": "password",
+        "email": "henry@gmail.com"
+    },
+    {
+        "username": "stacy",
+        "first_name": "Stacy",
+        "last_name": "Lacy",
+        "password": "password",
+        "email": "stacy@gmail.com"
     }
 ]
