@@ -123,11 +123,22 @@ body {
     border-radius: 30px;
 }
 
-.profile-name {
+.search-profile-name {
     font-size: 24px;
     font-weight: 800;
 }
-=======
+
+.search-picture {
+    border: 3px solid var(--purple);
+    border-radius: 360px;
+    margin: 3%;
+    min-height: 10em;
+}
+
+.search-profile-card {
+    
+}
+
 .profile-bio {
     border: 3px solid var(--purple);
     border-radius: 20px;
