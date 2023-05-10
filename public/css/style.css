@@ -76,13 +76,6 @@ body {
     border-radius: 20px;
 }
 
-.user-picture {
-    border: 3px solid var(--purple);
-    border-radius: 360px;
-    margin: 3%;
-    min-height: 32vh;
-}
-
 .signup .form-group {
     margin-top: 0;
     margin-bottom: 2%;
@@ -131,18 +124,25 @@ body {
     font-weight: 800;
 }
 
-.search-picture,
-.dashboard-photo {
-    border: 3px solid var(--purple);
-    border-radius: 360px;
-    margin: 3%;
-    min-height: 10em;
+
+ /* profile picture styling */
+.pic-wrapper {
+    display: flex;
+    justify-content: center;
 }
 
-.dashboard-photo {
-    min-height: 20rem;
-    min-width: auto;
-}
+.search-picture,
+.dashboard-photo,
+.user-picture {
+    border: 3px solid var(--purple);
+    margin: 3%;
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 50%;
+    object-fit: cover;
+} 
+
 
  /* dasboard/profile styling */
 .profile-bio {
@@ -197,14 +197,16 @@ body {
     color: var(--dark-pink);
 }
 
-.dashboard h1 {
+.dashboard h1,
+.other-user h1  {
     font-weight: bold;
     font-size: 225%;
     text-shadow: 3px 3px var(--purple);
     color: white;
 }
 
-.dashboard h3 {
+.dashboard h3,
+.other-user {
     font-weight: bold;
     font-size: 175%;
     text-shadow: 1px 1px var(--light-pink);
