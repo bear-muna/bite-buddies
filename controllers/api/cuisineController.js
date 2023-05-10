@@ -12,18 +12,18 @@ router.get('/', async (req, res) => {
     }
 });
 
-// add several cuisines route
+// add user's cuisine route
 router.post('/', async (req, res) => {
     try {
         // takes in an array of cuisines once user creates an account
-        const cuisinesData = await Cuisine.bulkCreate(req.body);
-        for(const cuisine of cuisinesData) {
-            UserCuisine.create({
-                user_id: req.session.id,
-                cuiside_id: cuisine.id,
-            });
-        }
-        res.status(200).json(cuisinesData);
+        const userCuisineData = await UserCuisine.create(
+            {
+                user_id: req.session.user_id,
+                cuisine_id: req.body.cuisine_id,
+            }
+        );
+
+        res.status(200).json(userCuisineData);
     } catch (err) {
         res.status(500).json(err);
     }

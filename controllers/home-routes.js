@@ -19,10 +19,12 @@ router.get('/', async (req, res) => {
 // Dashboard
 router.get('/dashboard', withAuth, async (req, res) => {
     try {
-        const dbUserData = await User.findByPk(req.session.user_id);
+        const dbUserData = await User.findByPk(req.session.user_id, {
+            include: [Profile, Cuisine]
+        });
 
         const user = dbUserData.get({ plain: true });
-
+        
         res.render('dashboard', { user, logged_in: req.session.logged_in });
     } catch (error) {
         console.log(error);
@@ -46,7 +48,11 @@ router.get('/signup', async (req, res) => {
             res.redirect('/dashboard');
             return;
         }
-        res.render('signup');
+
+        const cuisineData = await Cuisine.findAll();
+
+        const cuisine = cuisineData.map((u) => u.get({ plain: true }));
+        res.render('signup', {cuisine});
     } catch (error) {
         console.log(error);
         res.status(500).json({ msg: "Error loading signup page", error });
