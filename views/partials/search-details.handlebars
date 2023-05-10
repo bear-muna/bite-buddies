@@ -7,10 +7,15 @@
             <p class="profile-name">{{first_name}} {{last_name}}</p>
         </div>
         <div>
-            <p></p>
+            <p>{{location}}</p>
         </div>
     </div>
     <div class="search">
-
+        <p>BIO:</p>
+        {{#if bio}}
+        <p>{{bio}}</p>
+        {{else}}
+        <p>No bio</p>
+        {{/if}}
     </div>
 </div>
