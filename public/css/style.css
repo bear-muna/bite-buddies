@@ -74,7 +74,8 @@ body {
     border-radius: 20px;
 }
 
-.user-picture {
+.user-picture,
+.dashboard-photo {
     border: 3px solid var(--purple);
     border-radius: 360px;
     margin: 3%;
@@ -108,7 +109,8 @@ body {
     margin-bottom: 1%;
 }
 
-#back-btn {
+#back-btn,
+#edit-btn {
     font-weight: 800;
     color: white;
     font-size: 150%;
@@ -116,3 +118,23 @@ body {
     padding: 0;
 }
 
+.profile-bio {
+    border: 3px solid var(--purple);
+    border-radius: 20px;
+    padding: 1%;
+    min-height: 15vh;
+}
+
+.profile-availability,
+.dash-messages {
+    border: 3px solid var(--gold);
+    border-radius: 20px;
+    padding: 2%;
+    margin: 1%;
+    min-height: 15vh;
+}
+
+.dash-messages {
+    margin-top: 0;
+    margin-bottom: 6%;
+}

@@ -5,5 +5,12 @@
         "availability": "Anytime",
         "bio": "My favorite food is pizza!",
         "user_id": 1
+    },
+    {
+        "location": "PNW",
+        "picture": "blank-profile-pic.png",
+        "availability": "who knows? time isn't real",
+        "bio": "the snack that smiles back, GOLDFISH!",
+        "user_id": 3
     }
 ]
