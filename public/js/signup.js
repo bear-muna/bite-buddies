@@ -41,7 +41,6 @@ const signupFormHandler = async (event) => {
       cuisines.forEach( async (checkbox) => {
         if(checkbox.checked) {
           const cuisine_id = checkbox.getAttribute('data-cuisine-id');
-          console.log("Cuisine ID: " + cuisine_id);
           await fetch('/api/cuisines', {
             method: 'POST',
             body: JSON.stringify({cuisine_id}),
