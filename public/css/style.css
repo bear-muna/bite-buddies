@@ -82,7 +82,8 @@ body {
 }
 
 .signup .form-group {
-    margin: 2%;
+    margin-top: 0;
+    margin-bottom: 2%;
     padding: 1%;
 }
 
@@ -111,4 +112,6 @@ body {
     font-weight: 800;
     color: white;
     font-size: 150%;
+    margin: 0;
+    padding: 0;
 }
