@@ -1,21 +1,26 @@
-<div class="col profile-card d-flex flex-fill">
+<div class="col profile-card d-flex justify-content-around align-items-center">
     <div class="user-picture col-12 col-md-3 h-30 search">
         {{!-- Profile picture --}}
     </div>
-    <div class="d-flex flex-column align-items-center justify-content-around search">
-        <div class="d-flex justify-content-center align-items-center">
-            <p class="profile-name">{{first_name}} {{last_name}}</p>
+    <div class="d-flex flex-column justify-content-around align-items-center">
+        <div>
+            <div>
+                <p class="profile-name">{{first_name}} {{last_name}}</p>
+                <p>{{Profile.location}}</p>
+            </div>
+            <div>
+                <p>BIO:</p>
+                {{#if Profile.bio}}
+                <p>{{Profile.bio}}</p>
+                {{else}}
+                <p>No bio</p>
+                {{/if}}
+            </div>
         </div>
         <div>
-            <p>{{location}}</p>
+            {{#each Cuisines}}
+                <p>{{name}}</p>
+            {{/each}}
         </div>
-    </div>
-    <div class="search">
-        <p>BIO:</p>
-        {{#if bio}}
-        <p>{{bio}}</p>
-        {{else}}
-        <p>No bio</p>
-        {{/if}}
     </div>
 </div>
