@@ -5,5 +5,19 @@
         "availability": "Anytime",
         "bio": "My favorite food is pizza!",
         "user_id": 1
+    },
+    {
+        "location": "Texas",
+        "picture": "test.jpg",
+        "availability": "Whenever",
+        "bio": "I'm down to try anything! Not lactose!",
+        "user_id": 2
+    },
+    {
+        "location": "Tacoma",
+        "picture": "test.jpg",
+        "availability": "Weekends",
+        "bio": "Why'd the chicken cross the road? To get food",
+        "user_id": 3
     }
 ]
