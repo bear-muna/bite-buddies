@@ -1,10 +1,9 @@
-<div class="container-fluid dashboard">
+<div class="flex-container dashboard m-2 p-3">
     <div class="d-flex flex-row-reverse">
         <button class="btn" id="edit-btn">⚙️</button>
     </div>
     <div class="row justify-content-center">
-        <div class="dashboard-photo col-12 col-md-3 h-30">
-            <!-- photo upload --> 
+        <div style="background-image: url({{user.Profile.picture}}); background-position: center; background-size: cover;" class="dashboard-photo col-3 col-md-4">
         </div>
         <div class="dashboard-name col-2 align-self-center">
             <h1>{{user.first_name}} {{user.last_name}}</h1>
@@ -15,12 +14,13 @@
             <p class="profile-bio">{{user.Profile.bio}}</p>
         </div>
     </div>    
-    <div class="row favorite-cuisines">
-        <ul>
-            {{#each user.Cuisine}}
-            <li><button class="cuisine" type="submit">{{name}}</button></li>
+    <div class="cuisines d-flex align-self-center">
+        <h3 class="justify-content-center">Favorite Cuisines</h3>
+        <div class="row p-2 w-75 favorite-cuisines">
+            {{#each user.Cuisines}}
+            <button class="col m-2 fav-cuisine" type="button">{{name}}</button>
             {{/each}}
-        </ul>
+        </div>
     </div>
     <div class="row w-100">
         <div class="col availability">
