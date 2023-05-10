@@ -48,23 +48,61 @@
                 <label for="availability-signup">Add Availability:</label> <br>
                 <textarea class="form-input text-wrap w-100" type="text" id="availability-signup" placeholder="Enter some dates or times you're free to get a bite!" rows="5"></textarea>
             </div>
-            <div class="form-group col w-100">
+            <div class="form-group col w-100 cuisine-favs container">
                 <label for="cuisines-signup">Add your favorite cuisines!</label> <br>
-                <select name="cuisine-options form-select" id="cuisines-signup">
-                    <option value="American">American</option>
-                    <option value="Mexican">Mexican</option>
-                    <option value="Indian">Indian</option>
-                    <option value="Thai">Thai</option>
-                    <option value="Chinese">Chinese</option>
-                    <option value="Greek">Greek</option>
-                    <option value="Japanese">Japanese</option>
-                    <option value="Italian">Italian</option>
-                    <option value="Korean">Korean</option>
-                    <option value="Dessert">Dessert</option>
-                </select>
+                <div class="row">
+                    <div class="form-check col-3">
+                        <input class="form-check-input" type="checkbox" id="option1" value="American"></input>
+                        <label for="option1" class="form-check-label">American</label>
+                    </div>
+                    <div class="form-check col-3">
+                        <input class="form-check-input" type="checkbox" id="option2"></input>
+                        <label for="option2" class="form-check-label">Mexican</label>
+                    </div>
+                    <div class="form-check col-3">
+                        <input class="form-check-input" type="checkbox" id="option3"></input>
+                        <label for="option3" class="form-check-label">Indian</label>
+                    </div>
+                    <div class="form-check col-3">
+                        <input class="form-check-input" type="checkbox" id="option4"></input>
+                        <label for="option4" class="form-check-label">Thai</label>
+                    </div>
+                    <div class="form-check col-3">
+                        <input class="form-check-input" type="checkbox" id="option5"></input>
+                        <label for="option5" class="form-check-label">Chinese</label>
+                    </div>
+                    <div class="form-check col-3">
+                        <input class="form-check-input" type="checkbox" id="option6" value="American"></input>
+                        <label for="option6" class="form-check-label">Greek</label>
+                    </div>
+                    <div class="form-check col-3">
+                        <input class="form-check-input" type="checkbox" id="option7"></input>
+                        <label for="option7" class="form-check-label">Japanese</label>
+                    </div>
+                    <div class="form-check col-3">
+                        <input class="form-check-input" type="checkbox" id="option8"></input>
+                        <label for="option8" class="form-check-label">Italian</label>
+                    </div>
+                    <div class="form-check col-3">
+                        <input class="form-check-input" type="checkbox" id="option9"></input>
+                        <label for="option9" class="form-check-label">Korean</label>
+                    </div>
+                    <div class="form-check col-3">
+                        <input class="form-check-input" type="checkbox" id="option10"></input>
+                        <label for="option10" class="form-check-label">Dessert</label>
+                    </div>
+                    <div class="form-check col-3">
+                        <input class="form-check-input" type="checkbox" id="option11"></input>
+                        <label for="option11" class="form-check-label">Pizza</label>
+                    </div>
+                    <div class="form-check col-3">
+                        <input class="form-check-input" type="checkbox" id="option12"></input>
+                        <label for="option12" class="form-check-label">Coffee</label>
+                    </div>
+                </div>
             </div>
-            <div class="col">
-                <button class="btn" id="signup" type="submit">Sign up!</button>
+            <div class="row w-50 align-items-center">
+                <button class="btn align-self-center" id="signup" type="submit">Sign up!</button>
             </div>
         </div>
     </form>

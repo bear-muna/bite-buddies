@@ -104,8 +104,8 @@ body {
     font-weight: bold;
     background-color: var(--light-pink);
     font-size: 150%;
-    height: 70%;
     width: 100%;
+    margin-bottom: 1%;
 }
 
 #back-btn {
@@ -115,3 +115,4 @@ body {
     margin: 0;
     padding: 0;
 }
+
