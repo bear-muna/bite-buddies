@@ -8,16 +8,16 @@
         </div>
         <div class="dashboard-name col-2 align-self-center">
             <h1>{{user.first_name}} {{user.last_name}}</h1>
-            <h3>{{profile.location}}</h3>
+            <h3>{{user.Profile.location}}</h3>
         </div>
         <div class="bio col align-self-center">
             <h3>Bio</h3>
-            <p class="profile-bio">{{profile.bio}}</p>
+            <p class="profile-bio">{{user.Profile.bio}}</p>
         </div>
     </div>    
     <div class="row favorite-cuisines">
         <ul>
-            {{#each User.Cuisines}}
+            {{#each user.Cuisine}}
             <li><button class="cuisine" type="submit">{{name}}</button></li>
             {{/each}}
         </ul>
@@ -25,7 +25,7 @@
     <div class="row w-100">
         <div class="col availability">
             <h3>Availability</h3>
-            <p class="profile-availability">{{profile.availability}}</p>
+            <p class="profile-availability">{{user.Profile.availability}}</p>
         </div>
         <div class="col messages">
             <h3>Messages</h3>
