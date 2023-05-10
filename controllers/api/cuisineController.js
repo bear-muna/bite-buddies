@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Cuisine } = require('../../models');
+const { Cuisine, UserCuisine } = require('../../models');
 
 // get all cuisines route
 router.get('/', async (req, res) => {
@@ -17,7 +17,12 @@ router.post('/', async (req, res) => {
     try {
         // takes in an array of cuisines once user creates an account
         const cuisinesData = await Cuisine.bulkCreate(req.body);
-
+        for(const cuisine of cuisinesData) {
+            UserCuisine.create({
+                user_id: req.session.id,
+                cuiside_id: cuisine.id,
+            });
+        }
         res.status(200).json(cuisinesData);
     } catch (err) {
         res.status(500).json(err);
