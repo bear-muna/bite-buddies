@@ -11,7 +11,7 @@ router.post('/', async (req, res) => {
         if(profileTestData) {
             res
             .status(400)
-            .json({ message: 'User ' + req.session.user_id +'already has a profile' });
+            .json({ message: 'User ' + req.session.user_id + ' already has a profile' });
             return;
         }
 
