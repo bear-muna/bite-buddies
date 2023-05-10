@@ -59,8 +59,13 @@ router.get('/users/edit', withAuth, async (req, res) => {
         const dbUserData = await User.findByPk(req.session.user_id, {
             include: [Profile, Cuisine]
         });
-        const user = dbUserData.map((u) => u.get({ plain: true }));
-        res.render('edit', { user, logged_in: req.session.logged_in });
+
+        // get all cuisines to display in edit page dropdown
+        const dbCuisineData = await Cuisine.findAll();
+
+        const cuisine = dbCuisineData.map((u) => u.get({ plain: true }));
+        const user = dbUserData.get({ plain: true });
+        res.render('edit', { user, cuisine, logged_in: req.session.logged_in });
     } catch (error) {
         console.log(error);
         res.status(500).json({ msg: "Error loading edit page", error })

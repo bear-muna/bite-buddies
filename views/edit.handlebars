@@ -1,50 +1,44 @@
 <div class="row justify-content-center signup">
-    <form class="form w-90 signup-form">
+    <form class="form w-90 signup-form" id="edit-profile" data-user-id="{{user.id}}">
         <div class="form-group">
             <label for="username-signup">Enter username:</label> <br>
-            <input class="form-input w-100" type="text" id="username-signup">
+            <input class="form-input w-100" type="text" value="{{user.username}}" id="username-edit">
         </div>
         <div class="form-group">
             <label for="email-signup">Enter email:</label> <br>
-            <input class="form-input w-100" type="text" id="email-signup">
+            <input class="form-input w-100" type="text" value="{{user.email}}" id="email-edit">
         </div>
         <div class="form-group">
             <label for="password-signup">Enter password:</label> <br>
-            <input class="form-input w-100" type="text" id="password-signup">
+            {{!-- isn't this password encrypted? Don't know how to grab the unencrypted password --}}
+            <input class="form-input w-100" type="text" id="password-edit">
         </div>
         <div class="form-group">
             <label for="location-signup">Enter location:</label> <br>
-            <input class="form-input w-100" type="text" id="location-signup">
+            <input class="form-input w-100" type="text" value="{{user.Profile.location}}" id="location-edit">
         </div>
         <div class="form-group">
             <label for="first-name-signup">Enter first name:</label> <br>
-            <input class="form-input w-100" type="text" id="first-name-signup">
+            <input class="form-input w-100" type="text" value="{{user.first_name}}" id="first-name-edit">
         </div>
         <div class="form-group">
             <label for="last-name-signup">Enter last name:</label> <br>
-            <input class="form-input w-100" type="text" id="last-name-signup">
+            <input class="form-input w-100" type="text" value="{{user.last_name}}" id="last-name-edit">
         </div>
         <div class="form-group">
             <label for="bio-signup">Add Bio:</label> <br>
-            <input class="form-input w-100" type="text" id="bio-signup" placeholder="Add more about yourself so others can see how cool of a bite buddy you are!">
+            <input class="form-input w-100" type="text" value="{{user.Profile.bio}}" id="bio-edit" placeholder="Add more about yourself so others can see how cool of a bite buddy you are!">
         </div>
         <div class="form-group">
             <label for="availability-signup">Add Availability:</label> <br>
-            <input class="form-input w-100" type="text" id="availability-signup" placeholder="Enter some dates or times you're free to get a bite!">
+            <input class="form-input w-100" type="text" value="{{user.Profile.availability}}" id="availability-edit" placeholder="Enter some dates or times you're free to get a bite!">
         </div>
         <div class="form-group">
             <label for="cuisines-signup">Add your favorite cuisines!</label> <br>
-            <select name="cuisine-options" id="cuisines-signup">
-                <option value="American">American</option>
-                <option value="Mexican">Mexican</option>
-                <option value="Indian">Indian</option>
-                <option value="Thai">Thai</option>
-                <option value="Chinese">Chinese</option>
-                <option value="Greek">Greek</option>
-                <option value="Japanese">Japanese</option>
-                <option value="Italian">Italian</option>
-                <option value="Korean">Korean</option>
-                <option value="Dessert">Dessert</option>
+            <select name="cuisine-options" id="cuisines-edit">
+                {{#each cuisine}}
+                <option value="{{this.name}}">{{this.name}}</option>
+                {{/each}}
             </select>
         </div>
         <!-- photo upload -->

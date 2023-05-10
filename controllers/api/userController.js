@@ -63,6 +63,36 @@ router.post('/login', async (req, res) => {
     }
 });
 
+// edit user route
+router.put('/login', async (req, res) => {
+    try {
+      const userData = await User.update(
+        {
+          username: req.body.username,
+          first_name: req.body.first_name,
+          last_name: req.body.last_name,
+          password: req.body.password,
+          email: req.body.email,
+        },
+        {
+          where: {
+            id: req.session.user_id,
+          },
+        }
+      );
+
+      const successResponse = {
+        success: 'success',
+        userData,
+      };
+
+      res.status(200).json(successResponse);
+
+    } catch (err) {
+      res.status(500).json(err);
+    }
+});
+
 // logout route
 router.post('/logout', (req, res) => {
     // destroy current session
