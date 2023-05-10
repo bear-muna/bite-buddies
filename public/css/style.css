@@ -62,7 +62,8 @@ body {
     font-size: 80%;
 }
 
-.login-form button:hover{
+.login-form button:hover,
+.signup-form button:hover{
     background-color: white;
     color: var(--purple);
 }
@@ -70,5 +71,47 @@ body {
 .signup,
 .dashboard {
     border: 4px solid var(--light-pink);
+    border-radius: 20px;
+}
+
+.user-picture {
+    border: 3px solid var(--purple);
+    border-radius: 360px;
+    margin: 3%;
+    min-height: 32vh;
+}
+
+.signup .form-group {
+    margin-top: 0;
+    margin-bottom: 2%;
+    padding: 1%;
+}
+
+.signup input {
+    border: 3px solid var(--dark-pink);
+    min-height: 5vh;
+}
+
+.signup textarea{
+    border: 3px solid var(--dark-pink);
+    padding: 2%;
+}
+
+.signup-form button{
+    border: 4px solid var(--gold);
     border-radius: 30px;
+    padding: 2% 3%;
+    font-weight: bold;
+    background-color: var(--light-pink);
+    font-size: 150%;
+    height: 70%;
+    width: 100%;
+}
+
+#back-btn {
+    font-weight: 800;
+    color: white;
+    font-size: 150%;
+    margin: 0;
+    padding: 0;
 }
