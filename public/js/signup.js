@@ -34,7 +34,7 @@ const signupFormHandler = async (event) => {
         headers: { 'Content-Type': 'application/json' },
       });
     
-      if (response1 && response2 && response3) {
+      if (response1.ok && response2.ok && response3.ok) {
         document.location.replace('/dashboard');
       } else {
         alert('Failed to log in');
