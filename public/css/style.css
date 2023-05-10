@@ -197,14 +197,16 @@ body {
     color: var(--dark-pink);
 }
 
-.dashboard h1 {
+.dashboard h1,
+.other-user h1  {
     font-weight: bold;
     font-size: 225%;
     text-shadow: 3px 3px var(--purple);
     color: white;
 }
 
-.dashboard h3 {
+.dashboard h3,
+.other-user {
     font-weight: bold;
     font-size: 175%;
     text-shadow: 1px 1px var(--light-pink);
