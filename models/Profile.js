@@ -17,6 +17,7 @@ Profile.init(
         },
         picture: {
             type: DataTypes.STRING,
+            defaultValue: 'public/images/blank-profile-pic.png'
         },
         availability: {
             type: DataTypes.TEXT,

@@ -135,10 +135,6 @@ body {
     min-height: 10em;
 }
 
-.search-profile-card {
-    
-}
-
 .profile-bio {
     border: 3px solid var(--purple);
     border-radius: 20px;
