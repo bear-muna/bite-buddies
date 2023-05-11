@@ -1,16 +1,20 @@
 <div class="flex-container dashboard m-2 p-3">
     <div class="d-flex flex-row-reverse">
         <a href="users/edit">
-            <button type="button" class="btn" id="edit-btn">⚙️</button>
+            <button type="button" class="btn" id="edit-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-gear-fill" viewBox="0 0 16 16">
+                <path d="M9.405 1.05c-.413-1.4-2.397-1.4-2.81 0l-.1.34a1.464 1.464 0 0 1-2.105.872l-.31-.17c-1.283-.698-2.686.705-1.987 1.987l.169.311c.446.82.023 1.841-.872 2.105l-.34.1c-1.4.413-1.4 2.397 0 2.81l.34.1a1.464 1.464 0 0 1 .872 2.105l-.17.31c-.698 1.283.705 2.686 1.987 1.987l.311-.169a1.464 1.464 0 0 1 2.105.872l.1.34c.413 1.4 2.397 1.4 2.81 0l.1-.34a1.464 1.464 0 0 1 2.105-.872l.31.17c1.283.698 2.686-.705 1.987-1.987l-.169-.311a1.464 1.464 0 0 1 .872-2.105l.34-.1c1.4-.413 1.4-2.397 0-2.81l-.34-.1a1.464 1.464 0 0 1-.872-2.105l.17-.31c.698-1.283-.705-2.686-1.987-1.987l-.311.169a1.464 1.464 0 0 1-2.105-.872l-.1-.34zM8 10.93a2.929 2.929 0 1 1 0-5.86 2.929 2.929 0 0 1 0 5.858z"/>
+                </svg>
+            </button>
         </a>
     </div>
     <div class="row justify-content-center">
-        <div class="col-3 col-md-4">
+        <div class="col-12 col-md-4">
             <div class="pic-wrapper">
                 <img src={{user.Profile.picture}} class="dashboard-photo" alt="profile-pic">
             </div>
         </div>
-        <div class="dashboard-name col-2 align-self-center">
+        <div class="dashboard-name col-lg-2 align-self-center">
             <h1>{{user.first_name}} {{user.last_name}}</h1>
             <h3>{{user.Profile.location}}</h3>
         </div>
@@ -21,10 +25,10 @@
     </div>    
     <div class="cuisines d-flex align-self-center">
         <h3 class="justify-content-center">Favorite Cuisines</h3>
-        <div class="row p-2 w-75 favorite-cuisines">
+        <div class="d-flex justify-content-center p-2 w-75 flex-wrap favorite-cuisines">
             {{#each user.Cuisines}}
             <a href="/search/cuisine/{{id}}">
-                <button class="col m-2 fav-cuisine" type="button" data-cuisine-id="{{id}}">{{name}}</button>
+                <button class="col m-2 p-2 fav-cuisine" type="button" data-cuisine-id="{{id}}">{{name}}</button>
             </a>
             {{/each}}
         </div>
@@ -36,7 +40,7 @@
         </div>
         <div class="col messages">
             <h3>Messages</h3>
-            <button class="btn dash-messages position-relative w-100" type="button">    <span class="position-absolute top-0 start-100 translate-middle p-2 bg-danger border border-light rounded-circle">
+            <button class="btn dash-messages position-relative w-100" type="button">    <span class="position-absolute top-0 start-100 translate-middle p-2 border border-light rounded-circle alert">
                     <span class="visually-hidden">New alerts</span>
                 </span>                
                 <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-envelope" viewBox="0 0 16 16" height="10vh"><path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4Zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2Zm13 2.383-4.708 2.825L15 11.105V5.383Zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741ZM1 11.105l4.708-2.897L1 5.383v5.722Z"/></svg>

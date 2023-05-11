@@ -5,11 +5,13 @@
         </a>
     </div>
     <form class="form w-100 row" id="edit-profile" data-user-id="{{user.id}}" data-profile-picture="{{user.Profile.picture}}">
-        <div style="background-image: url({{user.Profile.picture}}); background-position: center; background-size: cover;" class="user-picture col-12 col-md-3 h-30">
-           <!-- photo upload --> 
-            <button id="upload_widget" type="button" class="cloudinary-button">Change Picture</button>
+        <div class="col-12 col-md-4">
+            <!-- photo upload --> 
+            <div class="pic-wrapper p-2 m-2">
+                <button id="upload_widget" type="button" class="cloudinary-button"><img src={{user.Profile.picture}} class="dashboard-photo d-flex justify-content-center" alt="profile-pic">Change Picture</button>
+            </div>
         </div>
-        <div class="col align-self-center">
+        <div class="col-lg-4 align-self-center">
             <div class="form-group">
                 <label for="username-edit" class="edit-label">Edit username:</label> <br>
                 <input class="form-input w-100" type="text" value="{{user.username}}" id="username-edit">
@@ -19,7 +21,7 @@
                 <input class="form-input w-100" type="text" value="{{user.email}}" id="email-edit">
             </div>
         </div>
-        <div class="col align-self-center">
+        <div class="col-lg-4 align-self-center">
             <div class="form-group">
                 <label for="password-edit" class="edit-label">Edit password:</label> <br>
                 {{!-- isn't this password encrypted? Don't know how to grab the unencrypted password --}}
@@ -31,7 +33,7 @@
             </div>
         </div>
         <div class="row w-100 justify-content-center">
-            <div class="col-12 col-md-6 align-self-center">
+            <div class="col-12 col-lg-6 align-self-center">
                 <div class="form-group">
                     <label for="first-name-edit" class="edit-label">Edit first name:</label> <br>
                     <input class="form-input w-100" type="text" value="{{user.first_name}}" id="first-name-edit">
@@ -41,30 +43,31 @@
                     <input class="form-input w-100" type="text" value="{{user.last_name}}" id="last-name-edit">
                 </div>
             </div>
-            <div class="form-group col align-self-center">
-                <label for="bio-edit">Edit Bio:</label> <br>
+            <div class="form-group col-lg-6 align-self-center">
+                <label for="bio-edit" class="edit-label">Edit Bio:</label> <br>
                 <textarea class="form-input w-100" type="text" value="{{user.Profile.bio}}" id="bio-edit" placeholder="Add more about yourself so others can see how cool of a bite buddy you are!" rows="6">{{user.Profile.bio}}</textarea>
             </div>
         </div>
         <div class="row justify-content-center">
-            <div class="form-group col-md-6">
+            <div class="form-group col-lg-6">
                 <label for="availability-edit" class="edit-label">Edit Availability:</label> <br>
                 <textarea class="form-input w-100" type="text" value="{{user.Profile.availability}}" id="availability-edit" placeholder="Enter some dates or times you're free to get a bite!" rows="5">{{user.Profile.availability}}</textarea>
             </div>
-            <div class="form-group col w-100 cuisine-favs container">
+            <div class="form-group col w-100 cuisine-favs container p-3">
                 <label for="cuisines-edit" class="edit-label">Edit your favorite cuisines!</label> <br>
                 <div class="row checkbox-section">
                     {{#each cuisine}}
-                    <div class="form-check col-3">
-                        <input class="form-check-input" type="checkbox" value="{{name}}" data-cuisine-id="{{id}}"></input>
-                        <label for="option" class="form-check-label">{{name}}</label>
+                    <div class="form-check col-6 col-md-4 col-lg-3 d-flex align-items-center">
+                        <label for="option" class="form-check-label d-flex justify-content-center">
+                            <input class="form-check-input" type="checkbox" value="{{name}}" data-cuisine-id="{{id}}">{{name}}</input>
+                        </label>
                     </div>
                     {{/each}}
                 </div>
             </div>
-            <div class="row w-50 align-items-center">
-                <button class="btn align-self-center edit-btn" id="edit" type="submit">Edit</button>
-            </div>
+        </div>
+        <div class="d-flex justify-content-center">
+            <button class="btn edit-btn" id="edit" type="submit">Edit</button>
         </div>
     </form>
 </div>

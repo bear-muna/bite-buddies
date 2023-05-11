@@ -15,28 +15,29 @@
 </head>
 
 <body>
+  <div class="container-fluid">
+    <div class="flex-column">
+      <header class="d-flex align-center p-2 justify-content-space-between">
+        <img src="/images/Bite_Buddies-transparent.png" alt="bite-buddies">
+        <nav class="ms-auto">
+          {{#if logged_in}}
+          <button class="no-button" id="logout">logout</button>
+          {{else}}
+          <a href="/homepage"></a>
+          {{/if}}
+        </nav>
+      </header>
 
-  <div class="flex-column">
-    <header class="d-flex align-center p-2 justify-content-space-between">
-      <img src="/images/Bite_Buddies-transparent.png" alt="bite-buddies">
-      <nav>
-        {{#if logged_in}}
-        <button class="no-button" id="logout">logout</button>
-        {{else}}
-        <a href="/homepage"></a>
-        {{/if}}
-      </nav>
-    </header>
+      <main class="container container-fluid mt-2">
+        {{{ body }}}
+      </main>
 
-    <main class="container container-fluid mt-2">
-      {{{ body }}}
-    </main>
+    </div>
 
+    {{#if logged_in}}
+    <script src="/js/logout.js"></script>
+    {{/if}}
   </div>
-
-  {{#if logged_in}}
-  <script src="/js/logout.js"></script>
-  {{/if}}
 
 </body>
 
