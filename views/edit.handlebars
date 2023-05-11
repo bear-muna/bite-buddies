@@ -1,7 +1,7 @@
 <div class="container-fluid edit">
     <div class="d-flex flex-row-reverse">
         <a href="/dashboard">
-            <button class="btn" id="back-btn">X</button>
+        <button class="btn" id="back-btn">X</button>
         </a>
     </div>
     <form class="form w-100 row" id="edit-profile" data-user-id="{{user.id}}" data-profile-picture="{{user.Profile.picture}}">
@@ -43,13 +43,13 @@
             </div>
             <div class="form-group col align-self-center">
                 <label for="bio-edit">Edit Bio:</label> <br>
-                <textarea class="form-input w-100" type="text" value="{{user.Profile.bio}}" id="bio-edit" placeholder="Add more about yourself so others can see how cool of a bite buddy you are!" rows="6"></textarea>
+                <textarea class="form-input w-100" type="text" value="{{user.Profile.bio}}" id="bio-edit" placeholder="Add more about yourself so others can see how cool of a bite buddy you are!" rows="6">{{user.Profile.bio}}</textarea>
             </div>
         </div>
         <div class="row justify-content-center">
             <div class="form-group col-md-6">
                 <label for="availability-edit" class="edit-label">Edit Availability:</label> <br>
-                <textarea class="form-input w-100" type="text" value="{{user.Profile.availability}}" id="availability-edit" placeholder="Enter some dates or times you're free to get a bite!" rows="5"></textarea>
+                <textarea class="form-input w-100" type="text" value="{{user.Profile.availability}}" id="availability-edit" placeholder="Enter some dates or times you're free to get a bite!" rows="5">{{user.Profile.availability}}</textarea>
             </div>
             <div class="form-group col w-100 cuisine-favs container">
                 <label for="cuisines-edit" class="edit-label">Edit your favorite cuisines!</label> <br>
