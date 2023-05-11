@@ -151,14 +151,15 @@ router.get('/messages/:sendID/:recID', withAuth, async (req, res) => {
         // });
 
         const messages = dbMessages.map((mes) => mes.get({ plain: true }));
-        const senderID = req.session.user_id;
+        const senderID = req.params.sendID;
         const recipientID = req.params.recID;
+        const userID = req.session.user_id;
 
         // const sendMessage = dbSenderData.map((mes) => mes.get({ plain: true }));
         // const recMessage = dbRecipientData.map((mes) => mes.get({ plain: true }));
 
-        res.render('message', { messages, senderID, recipientID, logged_in: req.session.logged_in });
-
+        res.render('message', { messages, senderID, recipientID, userID, logged_in: req.session.logged_in });
+        //res.json({messages, senderID, recipientID});
     } catch (error) {
         console.log(error);
         res.status(500).json({ msg: "Error loading profile", error });
