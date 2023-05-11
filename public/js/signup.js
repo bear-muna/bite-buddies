@@ -26,11 +26,6 @@ const signupFormHandler = async (event) => {
 
     const cuisines = document.querySelectorAll('input[type="checkbox"]');
 
-  
-    // TODO: Need to change based on cuisine check box instead of select menu
-
-    
-    
     if  (
       (username && email && password) && 
       (location && first_name && last_name)) {
@@ -51,29 +46,23 @@ const signupFormHandler = async (event) => {
         headers: { 'Content-Type': 'application/json' },
       }); 
       
-      // const response3 = await fetch('/api/cuisines', {
-        //   method: 'POST',
-        //   body: JSON.stringify({ cuisine }),
-        //   headers: { 'Content-Type': 'application/json' },
-        // });
-        
-        cuisines.forEach( async (checkbox) => {
-          if(checkbox.checked) {
-            const cuisine_id = checkbox.getAttribute('data-cuisine-id');
-            await fetch('/api/cuisines', {
-              method: 'POST',
-              body: JSON.stringify({cuisine_id}),
-              headers: { 'Content-Type': 'application/json' },
-            });
-          }
-        });
-        
-        if (response1.ok && response2.ok) {
-          document.location.replace('/dashboard');
-        } else {
-          alert('Failed to log in');
+      cuisines.forEach( async (checkbox) => {
+        if(checkbox.checked) {
+          const cuisine_id = checkbox.getAttribute('data-cuisine-id');
+          await fetch('/api/cuisines', {
+            method: 'POST',
+            body: JSON.stringify({cuisine_id}),
+            headers: { 'Content-Type': 'application/json' },
+          });
         }
-      };
+      });
+        
+      if (response1.ok && response2.ok) {
+        document.location.replace('/dashboard');
+      } else {
+        alert('Failed to log in');
+      }
+    };
       
     } catch (error) {
       console.log(error);
@@ -88,10 +77,3 @@ const signupFormHandler = async (event) => {
   document
   .querySelector('.signup-form')
   .addEventListener('submit', signupFormHandler);
-  
-
-
-// NOTES
-  // CUISINE VALUE IS SINGLE AND NOT AN ARRAY
-  // cuisineController POST route is bulkCreate
-    // TODO: Need to fix controller POST route
