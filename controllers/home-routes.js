@@ -2,6 +2,11 @@ const router = require('express').Router();
 const withAuth = require('../utils/auth');
 const {Op} = require('sequelize');
 const { User, Cuisine, Message, Profile, UserCuisine } = require('../models');
+const handlebars = require('handlebars');
+
+handlebars.registerHelper('eq', function (a, b) {
+    return a === b;
+});
 
 // Homepage with Login option
 router.get('/', async (req, res) => {
@@ -105,6 +110,13 @@ router.get('/profiles/:id', async (req, res) => {
 // GET messages between 2 Users
 router.get('/messages/:sendID/:recID', withAuth, async (req, res) => {
     try {
+
+        // make sure logged in user can't view other users' messages
+        if(!(req.params.sendID == req.session.user_id)) {
+            console.log("User ID: " + req.session.user_id);
+            res.redirect('/dashboard');
+        }
+
         // gets all messages between the same two users, regardless if one was the sender or recpient
         const dbMessages = await Message.findAll({
             where: {
@@ -139,11 +151,13 @@ router.get('/messages/:sendID/:recID', withAuth, async (req, res) => {
         // });
 
         const messages = dbMessages.map((mes) => mes.get({ plain: true }));
+        const senderID = req.session.user_id;
+        const recipientID = req.params.recID;
 
         // const sendMessage = dbSenderData.map((mes) => mes.get({ plain: true }));
         // const recMessage = dbRecipientData.map((mes) => mes.get({ plain: true }));
 
-        res.render('message', { messages, logged_in: req.session.logged_in });
+        res.render('message', { messages, senderID, recipientID, logged_in: req.session.logged_in });
 
     } catch (error) {
         console.log(error);

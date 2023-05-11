@@ -1,10 +1,17 @@
-<div>
-   {{#each messages}}
-        <div>
+<form id="message-form" data-sender-id="{{senderID}}" data-recipient-id="{{recipientID}}">
+    <div>
+    {{#each messages}}
+            {{!-- <div style="color: {{#if (eq this.sender_id senderID)}}green{{else}}blue{{/if}};"> --}}
+            <div>
             {{this.body}}
+            </div>
+    {{/each}}
+
+        <input class="form-input w-100" id="message" type="text" id="email-edit">
+        <div class="row w-50 align-items-center">
+            <button class="btn align-self-center send-btn" id="send" type="submit">Send</button>
         </div>
-   {{/each}}
-</div>
+    </div>
+</form>
 
-
-{{!-- <script src="/js/message.js"></script> --}}
+<script src="/js/message.js"></script>
