@@ -13,21 +13,21 @@
         </div>
         <div class="col align-self-center">
             <div class="form-group">
-                <label for="username-signup">*Enter username:</label> <br>
+                <label for="username-signup" class="signup-label">*Enter username:</label> <br>
                 <input class="form-input w-100" type="text" id="username-signup">
             </div>
             <div class="form-group">
-                <label for="email-signup">*Enter email:</label> <br>
+                <label for="email-signup" class="signup-label">*Enter email:</label> <br>
                 <input class="form-input w-100" type="text" id="email-signup">
             </div>
         </div>
         <div class="col align-self-center">
             <div class="form-group">
-                <label for="password-signup">*Enter password:</label> <br>
+                <label for="password-signup" class="signup-label">*Enter password:</label> <br>
                 <input class="form-input w-100" type="text" id="password-signup">
             </div>
             <div class="form-group">
-                <label for="location-signup">*Enter location:</label> <br>
+                <label for="location-signup" class="signup-label">*Enter location:</label> <br>
                 <input class="form-input w-100" type="text" id="location-signup">
             </div>
         </div>
@@ -35,26 +35,26 @@
         <div class="row w-100 justify-content-center">
             <div class="col-12 col-md-6 align-self-center">
                 <div class="form-group">
-                    <label for="first-name-signup">*Enter first name:</label> <br>
+                    <label for="first-name-signup" class="signup-label">*Enter first name:</label> <br>
                     <input class="form-input w-100" type="text" id="first-name-signup">
                 </div>
                 <div class="form-group">
-                    <label for="last-name-signup">*Enter last name:</label> <br>
+                    <label for="last-name-signup" class="signup-label">*Enter last name:</label> <br>
                     <input class="form-input w-100" type="text" id="last-name-signup">
                 </div>
             </div>
             <div class="form-group col align-self-center">
-                <label for="bio-signup">Add Bio:</label> <br>
+                <label for="bio-signup" class="signup-label">Add Bio:</label> <br>
                 <textarea class="form-input w-100 text-wrap" type="text" id="bio-signup" placeholder="Add more about yourself so others can see how cool of a bite buddy you are!" rows="6"></textarea>
             </div>
         </div>
         <div class="row justify-content-center">
             <div class="form-group col-md-6">
-                <label for="availability-signup">Add Availability:</label> <br>
+                <label for="availability-signup" class="signup-label">Add Availability:</label> <br>
                 <textarea class="form-input text-wrap w-100" type="text" id="availability-signup" placeholder="Enter some dates or times you're free to get a bite!" rows="5"></textarea>
             </div>
             <div class="form-group col w-100 cuisine-favs container">
-                <label for="cuisines-signup">Add your favorite cuisines!</label> <br>
+                <label for="cuisines-signup" class="signup-label">Add your favorite cuisines!</label> <br>
                 <div class="row checkbox-section">
                     {{#each cuisine}}
                     <div class="form-check col-3">
@@ -64,7 +64,7 @@
                     {{/each}}
                 </div>
             </div>
-            <div class="row w-50 align-items-center">
+            <div class="row w-50 justify-content-center">
                 <button class="btn align-self-center signup-btn" id="signup" type="submit">Sign up!</button>
             </div>
         </div>

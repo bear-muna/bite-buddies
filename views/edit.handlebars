@@ -1,44 +1,56 @@
-<div class="row justify-content-center signup">
-    <form class="form w-90 signup-form" id="edit-profile" data-user-id="{{user.id}}" data-profile-picture="{{user.Profile.picture}}">
+<div class="container-fluid edit">
+    <div class="d-flex flex-row-reverse">
+        <button class="btn" id="back-btn">X</button>
+    </div>
+    <form class="form w-100 row" id="edit-profile" data-user-id="{{user.id}}" data-profile-picture="{{user.Profile.picture}}">
         <div style="background-image: url({{user.Profile.picture}}); background-position: center; background-size: cover;" class="user-picture col-12 col-md-3 h-30">
            <!-- photo upload --> 
-            <button id="upload_widget" type="button" class="cloudinary-button">Upload Picture</button>
+            <button id="upload_widget" type="button" class="cloudinary-button">Change Picture</button>
         </div>
-        <div class="form-group">
-            <label for="username-signup">Enter username:</label> <br>
-            <input class="form-input w-100" type="text" value="{{user.username}}" id="username-edit">
+        <div class="col align-self-center">
+            <div class="form-group">
+                <label for="username-edit" class="edit-label">Edit username:</label> <br>
+                <input class="form-input w-100" type="text" value="{{user.username}}" id="username-edit">
+            </div>
+            <div class="form-group">
+                <label for="email-edit" class="edit-label">Edit email:</label> <br>
+                <input class="form-input w-100" type="text" value="{{user.email}}" id="email-edit">
+            </div>
         </div>
-        <div class="form-group">
-            <label for="email-signup">Enter email:</label> <br>
-            <input class="form-input w-100" type="text" value="{{user.email}}" id="email-edit">
+        <div class="col align-self-center">
+            <div class="form-group">
+                <label for="password-edit" class="edit-label">Edit password:</label> <br>
+                {{!-- isn't this password encrypted? Don't know how to grab the unencrypted password --}}
+                <input class="form-input w-100" type="text" id="password-edit">
+            </div>
+            <div class="form-group">
+                <label for="location-edit" class="edit-label">Edit location:</label> <br>
+                <input class="form-input w-100" type="text" value="{{user.Profile.location}}" id="location-edit">
+            </div>
         </div>
-        <div class="form-group">
-            <label for="password-signup">Enter password:</label> <br>
-            {{!-- isn't this password encrypted? Don't know how to grab the unencrypted password --}}
-            <input class="form-input w-100" type="text" id="password-edit">
+        <div class="row w-100 justify-content-center">
+            <div class="col-12 col-md-6 align-self-center">
+                <div class="form-group">
+                    <label for="first-name-edit" class="edit-label">Edit first name:</label> <br>
+                    <input class="form-input w-100" type="text" value="{{user.first_name}}" id="first-name-edit">
+                </div>
+                <div class="form-group">
+                    <label for="last-name-edit" class="edit-label">Edit last name:</label> <br>
+                    <input class="form-input w-100" type="text" value="{{user.last_name}}" id="last-name-edit">
+                </div>
+            </div>
+            <div class="form-group col align-self-center">
+                <label for="bio-edit">Edit Bio:</label> <br>
+                <textarea class="form-input w-100" type="text" value="{{user.Profile.bio}}" id="bio-edit" placeholder="Add more about yourself so others can see how cool of a bite buddy you are!" rows="6"></textarea>
+            </div>
         </div>
-        <div class="form-group">
-            <label for="location-signup">Enter location:</label> <br>
-            <input class="form-input w-100" type="text" value="{{user.Profile.location}}" id="location-edit">
-        </div>
-        <div class="form-group">
-            <label for="first-name-signup">Enter first name:</label> <br>
-            <input class="form-input w-100" type="text" value="{{user.first_name}}" id="first-name-edit">
-        </div>
-        <div class="form-group">
-            <label for="last-name-signup">Enter last name:</label> <br>
-            <input class="form-input w-100" type="text" value="{{user.last_name}}" id="last-name-edit">
-        </div>
-        <div class="form-group">
-            <label for="bio-signup">Add Bio:</label> <br>
-            <input class="form-input w-100" type="text" value="{{user.Profile.bio}}" id="bio-edit" placeholder="Add more about yourself so others can see how cool of a bite buddy you are!">
-        </div>
-        <div class="form-group">
-            <label for="availability-signup">Add Availability:</label> <br>
-            <input class="form-input w-100" type="text" value="{{user.Profile.availability}}" id="availability-edit" placeholder="Enter some dates or times you're free to get a bite!">
-        </div>
+        <div class="row justify-content-center">
+            <div class="form-group col-md-6">
+                <label for="availability-edit" class="edit-label">Edit Availability:</label> <br>
+                <textarea class="form-input w-100" type="text" value="{{user.Profile.availability}}" id="availability-edit" placeholder="Enter some dates or times you're free to get a bite!" rows="5"></textarea>
+            </div>
             <div class="form-group col w-100 cuisine-favs container">
-                <label for="cuisines-signup">Add your favorite cuisines!</label> <br>
+                <label for="cuisines-edit" class="edit-label">Edit your favorite cuisines!</label> <br>
                 <div class="row checkbox-section">
                     {{#each cuisine}}
                     <div class="form-check col-3">
@@ -48,8 +60,9 @@
                     {{/each}}
                 </div>
             </div>
-        <div class="row w-50 align-items-center">
-            <button class="btn align-self-center" id="edit" type="submit">Edit</button>
+            <div class="row w-50 align-items-center">
+                <button class="btn align-self-center edit-btn" id="edit" type="submit">Edit</button>
+            </div>
         </div>
     </form>
 </div>

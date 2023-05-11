@@ -69,30 +69,35 @@ body {
     color: var(--purple);
 }
 
- /* signup styling */
+ /* signup/edit styling */
 .signup,
-.dashboard {
+.dashboard,
+.edit {
     border: 4px solid var(--light-pink);
     border-radius: 20px;
 }
 
-.signup .form-group {
+.signup .form-group,
+.edit .form-group {
     margin-top: 0;
     margin-bottom: 2%;
     padding: 1%;
 }
 
-.signup input {
+.signup input,
+.edit input {
     border: 3px solid var(--dark-pink);
     min-height: 5vh;
 }
 
-.signup textarea{
+.signup textarea,
+.edit textarea{
     border: 3px solid var(--dark-pink);
     padding: 2%;
 }
 
-.signup-btn{
+.signup-btn,
+.edit-btn{
     border: 4px solid var(--gold);
     border-radius: 30px;
     padding: 2% 3%;
@@ -101,6 +106,15 @@ body {
     font-size: 150%;
     width: 100%;
     margin-bottom: 1%;
+    color: white;
+}
+
+.signup-btn:hover,
+.edit-btn:hover {
+    border: 4px solid var(--purple);
+    border-radius: 30px;
+    background-color: white;
+    color: var(--purple);
 }
 
 #back-btn,
@@ -110,6 +124,18 @@ body {
     font-size: 150%;
     margin: 0;
     padding: 0;
+}
+
+.edit form {
+    padding: 1%;
+}
+
+.signup-label,
+.edit-label {
+    font-weight: bold;
+    font-size: 175%;
+    text-shadow: 1px 1px var(--light-pink);
+    color: var(--purple);
 }
 
 
@@ -224,7 +250,7 @@ body {
 }
 
 .dashboard h3,
-.other-user {
+.other-user{
     font-weight: bold;
     font-size: 175%;
     text-shadow: 1px 1px var(--light-pink);
