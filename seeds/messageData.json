@@ -18,5 +18,45 @@
         "body": "I love Korean BBQ!",
         "sender_id": 1,
         "recipient_id": 2
+    },
+    {
+        "body": "Love Thai food!",
+        "sender_id": 1,
+        "recipient_id": 3
+    },
+    {
+        "body": "Yeah Thai food is amazing!",
+        "sender_id": 3,
+        "recipient_id": 1
+    },
+    {
+        "body": "What other foods do you like?",
+        "sender_id": 1,
+        "recipient_id": 3
+    },
+    {
+        "body": "I love Korean BBQ!",
+        "sender_id": 3,
+        "recipient_id": 1
+    },
+    {
+        "body": "Love Thai food!",
+        "sender_id": 1,
+        "recipient_id": 4
+    },
+    {
+        "body": "Yeah Thai food is amazing!",
+        "sender_id": 4,
+        "recipient_id": 1
+    },
+    {
+        "body": "What other foods do you like?",
+        "sender_id": 1,
+        "recipient_id": 4
+    },
+    {
+        "body": "I love Korean BBQ!",
+        "sender_id": 4,
+        "recipient_id": 1
     }
 ]
