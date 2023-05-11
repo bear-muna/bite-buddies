@@ -1,12 +1,12 @@
 [
     {
-        "name": "Thai"
+        "name": "American"
     },
     {
         "name": "Chinese"
     },
     {
-        "name": "Russian"
+        "name": "Indian"
     },
     {
         "name": "Mexican"
@@ -30,13 +30,9 @@
         "name": "Japanese"
     },
     {
-        "name": "Puerto Rican"
+        "name": "Pizza"
     },
     {
-        "name": "Brazillian"
-    },
-    {
-        "name": "Indian"
+        "name": "Dessert"
     }
-
 ]

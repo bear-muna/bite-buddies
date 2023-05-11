@@ -6,7 +6,7 @@
         "user_id": 1
     },
     {
-        "location": "Texas",
+        "location": "Kent",
         "availability": "Whenever",
         "bio": "I'm down to try anything! Not lactose!",
         "user_id": 2
@@ -20,7 +20,7 @@
     {
         "location": "Seattle",
         "availability": "Everyday",
-        "bio": "I'm really into Korean BBQ",
+        "bio": "The snack that smiles back, GOLDFISH!",
         "user_id": 4
     },
     {
@@ -31,8 +31,62 @@
     },
     {
         "location": "Kent",
-        "availability": "Anytime",
-        "bio": "This is the last seed for profile",
+        "availability": "Any 3 Tuesay every other month",
+        "bio": "What did the horse say after it tripped? Help! Ive fallen and I cant giddyup!",
         "user_id": 6
+    },
+    {
+        "location": "Seattle",
+        "availability": "Time isn't real",
+        "bio": "What do you call an angry carrot? A steamed veggie.",
+        "user_id": 7
+    },
+    {
+        "location": "Portland",
+        "availability": "On days that end in y",
+        "bio": "How do you make an egg-roll? You push it!",
+        "user_id": 8
+    },
+    {
+        "location": "Auburn",
+        "availability": "June 12th, 2023 @ 2:30pm",
+        "bio": "I ordered a chicken and an egg online. Ill let you know what comes first",
+        "user_id": 9
+    },
+    {
+        "location": "Gig Harbor",
+        "availability": "Tuesday afternoons and Fridays",
+        "bio": "What does corn say when it gets a compliment? Aw, shucks!",
+        "user_id": 10
+    },
+    {
+        "location": "Tacoma",
+        "availability": "When I feel up for being social",
+        "bio": "Whats Forrest Gumps password? 1forrest1",
+        "user_id": 11
+    },
+    {
+        "location": "Portland",
+        "availability": "Any sunday, except this one",
+        "bio": "What do sea monsters eat? Fish and ships.",
+        "user_id": 12
+    },
+    {
+        "location": "Auburn",
+        "availability": "Thursday afternoon, when I'm free on Thursday afternoon to hangout on Thursday afternoon",
+        "bio": "Why do mushrooms get invited to all the parties?Because they are such fungis",
+        "user_id": 13
+    },
+    {
+        "location": "Gig Harbor",
+        "availability": "Monday, Wednesday, and Thursday afternoons",
+        "bio": "What did the cucumber say to the pickle? You mean a great dill to me",
+        "user_id": 14
+    },
+    {
+        "location": "Tacoma",
+        "availability": "Thursdays at 6am",
+        "bio": "What did the cake say to the fork? You want a piece of me?",
+        "user_id": 15
     }
 ]
