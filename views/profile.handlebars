@@ -3,12 +3,12 @@
         <button type="button" class="btn" id="exit-btn">X</button>
     </div>
     <div class="row justify-content-center">
-        <div class="col-3 col-md-4">
+        <div class="col-12 col-md-4">
             <div class="pic-wrapper">
                 <img src={{user.Profile.picture}} class="dashboard-photo" alt="profile-pic">
             </div>
         </div>
-        <div class="dashboard-name col-2 align-self-center">
+        <div class="dashboard-name col-lg-2 align-self-center">
             <h1>{{user.first_name}} {{user.last_name}}</h1>
             <h3>{{user.Profile.location}}</h3>
         </div>
@@ -19,7 +19,7 @@
     </div>    
     <div class="cuisines d-flex align-self-center">
         <h3 class="justify-content-center">Favorite Cuisines</h3>
-        <div class="row p-2 w-75 favorite-cuisines">
+        <div class="p-2 w-75 favorite-cuisines d-flex justify-content-center flex-wrap">
             {{#each user.Cuisines}}
             <button class="col m-2 fav-cuisine" type="button" data-cuisine-id="{{id}}">{{name}}</button>
             {{/each}}
