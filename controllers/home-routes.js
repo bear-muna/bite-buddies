@@ -90,7 +90,11 @@ router.get('/profiles/:id', async (req, res) => {
             include: [Profile, Cuisine],
         });
         const user = dbUserData.get({ plain: true });
-        res.render('profile', { user, logged_in: req.session.logged_in });
+
+        // pass this in to profile handlebar so we can link to messages page
+        const senderId = req.session.user_id;
+
+        res.render('profile', { user, senderId, logged_in: req.session.logged_in });
     } catch (error) {
         console.log(error);
         res.status(500).json({ msg: "Error loading profile", error });
