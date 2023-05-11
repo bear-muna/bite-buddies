@@ -81,6 +81,11 @@ router.get('/users/edit', withAuth, async (req, res) => {
 // GET profile by ID
 router.get('/profiles/:id', async (req, res) => {
     try {
+
+        if (req.session.user_id == req.params.id) {
+            res.redirect('/dashboard');
+        }
+
         const dbUserData = await User.findByPk(req.params.id, {
             include: [Profile, Cuisine],
         });
