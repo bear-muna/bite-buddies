@@ -3,7 +3,7 @@
 const messageSend = async (e) => {
     e.preventDefault();
 
-    const message = document.querySelector('#message').ariaValueMax.trim();
+    const message = document.querySelector('#message').value.trim();
     
     if (message) {
         const response = await fetch('/api/message', {
