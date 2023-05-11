@@ -140,16 +140,58 @@ body {
 
 
   /* search page styling */
-.search {
-    border: 4px solid var(--purple);
-    border-radius: 30px;
-}
-
 .search-profile-name {
     font-size: 24px;
     font-weight: 800;
 }
 
+.view-profile-tag {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    border: 1px solid var(--purple);
+    border-radius: 5px;
+    margin: 2px;
+    padding: 2px;
+    background: white;
+}
+
+.view-profile-tag:hover {
+    color: white;
+    background: var(--teal);
+    box-shadow: 1px 1px var(--purple);
+}
+
+.search-profile-card {
+    background: var(--teal);
+    border: 3px solid var(--purple);
+    border-radius: 15px;
+    transition: all .2s ease-in-out;
+}
+
+.search-profile-card:hover {
+    background: white;
+    font-weight: bold;
+    color: var(--purple);
+    transform: scale(1, 1);
+}
+
+.cuisine-tag {
+    display: inline-block;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    border: 1px solid var(--purple);
+    border-radius: 5px;
+    margin: 2px;
+    padding: 2px;
+    background: var(--purple);
+}
+
+.cuisine-tag:hover {
+    color: black;
+    background: var(--gold);
+}
 
  /* profile picture styling */
 .pic-wrapper {
