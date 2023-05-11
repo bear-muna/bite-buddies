@@ -3,9 +3,13 @@
         <button class="btn" id="back-btn">X</button>
     </div>
     <form class="row form w-100 signup-form">
-        <div class="user-picture col-12 col-md-3 h-30">
-           <!-- photo upload --> 
-            <button id="upload_widget" type="button" class="cloudinary-button">Upload Picture</button>
+        <div class="col-3 col-md-4">
+            <!-- photo upload --> 
+            <div class="pic-wrapper">
+                <div class="user-picture">
+                <button id="upload_widget" type="button" class="cloudinary-button">Upload Picture</button>
+                </div>
+            </div>
         </div>
         <div class="col align-self-center">
             <div class="form-group">
@@ -61,7 +65,7 @@
                 </div>
             </div>
             <div class="row w-50 align-items-center">
-                <button class="btn align-self-center" id="signup" type="submit">Sign up!</button>
+                <button class="btn align-self-center signup-btn" id="signup" type="submit">Sign up!</button>
             </div>
         </div>
     </form>

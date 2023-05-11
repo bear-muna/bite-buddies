@@ -92,7 +92,7 @@ body {
     padding: 2%;
 }
 
-.signup-form button{
+.signup-btn{
     border: 4px solid var(--gold);
     border-radius: 30px;
     padding: 2% 3%;
@@ -132,8 +132,7 @@ body {
 }
 
 .search-picture,
-.dashboard-photo,
-.user-picture {
+.dashboard-photo{
     border: 3px solid var(--purple);
     margin: 3%;
     display: block;
@@ -143,6 +142,25 @@ body {
     object-fit: cover;
 } 
 
+
+.user-picture {
+    width: 10em;
+    height: 10em;
+    border-radius: 50%;
+    background-color: var(--light-pink);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2em;
+    color: white;
+    outline: none;
+}
+
+.cloudinary-button {
+    outline: none !important;
+    background-color: var(--light-pink) !important;
+    border: none !important;
+}
 
  /* dasboard/profile styling */
 .profile-bio {
