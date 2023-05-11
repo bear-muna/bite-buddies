@@ -84,7 +84,7 @@ router.get('/profiles/:id', async (req, res) => {
         const dbUserData = await User.findByPk(req.params.id, {
             include: [Profile, Cuisine],
         });
-        const user = dbUserData.map((u) => u.get({ plain: true }));
+        const user = dbUserData.get({ plain: true });
         res.render('profile', { user, logged_in: req.session.logged_in });
     } catch (error) {
         console.log(error);

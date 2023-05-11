@@ -21,7 +21,7 @@
         <h3 class="justify-content-center">Favorite Cuisines</h3>
         <div class="row p-2 w-75 favorite-cuisines">
             {{#each user.Cuisines}}
-            <p class="col m-2 fav-cuisine">{{name}}</p>
+            <a href="/search/cuisine/{{id}}" class="col m-2 fav-cuisine">{{name}}</a>
             {{/each}}
         </div>
     </div>
