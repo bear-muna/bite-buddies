@@ -5,7 +5,7 @@
         </div>
     </div>
     <div class="col-9 col-md-8 d-flex flex-column justify-content-center align-items-start p-2">
-        <div class="col-9 d-flex flex-column justify-content-around align-items-center">
+        <div class="col-12 d-flex flex-column justify-content-around align-items-center">
             <div class="col-12 d-flex flex-column justify-content-around align-items-start">
                 <p class="search-profile-name">{{first_name}}</p>
                 <p>{{Profile.location}}</p>
@@ -19,11 +19,6 @@
                 {{/if}}
                 <a class="view-profile-tag" href="/profiles/{{id}}">View Profile</a>
             </div>
-        </div>
-        <div class="col-12 mt-2 d-flex flex-row justify-content-between align-items-center">
-        {{#each Cuisines}}
-            <a href="/search/cuisine/{{id}}" class="cuisine-tag">{{name}}</a>
-        {{/each}}
         </div>
     </div>
 </div>
