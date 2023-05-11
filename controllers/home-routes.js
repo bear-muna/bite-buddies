@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const withAuth = require('../utils/auth');
+const {Op} = require('sequelize');
 const { User, Cuisine, Message, Profile, UserCuisine } = require('../models');
 
 // Homepage with Login option
@@ -104,26 +105,45 @@ router.get('/profiles/:id', async (req, res) => {
 // GET messages between 2 Users
 router.get('/messages/:sendID/:recID', withAuth, async (req, res) => {
     try {
-        const dbSenderData = await Message.findAll({
+        // gets all messages between the same two users, regardless if one was the sender or recpient
+        const dbMessages = await Message.findAll({
             where: {
-                sender_id: req.params.sendID,
-                recipient_id: req.params.recID,
+                [Op.or]: [
+                    {
+                        sender_id: parseInt(req.params.sendID),
+                        recipient_id: parseInt(req.params.recID),
+                    },
+                    {
+                        sender_id: parseInt(req.params.recID),
+                        recipient_id: parseInt(req.params.sendID),
+                    }
+                ],
             },
-            include: [User],
+            order: [['created_at', 'ASC']] // get messages in order of creation date
         });
 
-        const dbRecipientData = await Message.findAll({
-            where: {
-                sender_id: req.params.recID,
-                recipient_id: req.params.sendID,
-            },
-            include: [User],
-        });
+        // const dbSenderData = await Message.findAll({
+        //     where: {
+        //         sender_id: req.params.sendID,
+        //         recipient_id: req.params.recID,
+        //     },
+        //     include: [User],
+        // });
 
-        const sendMessage = dbSenderData.map((mes) => mes.get({ plain: true }));
-        const recMessage = dbRecipientData.map((mes) => mes.get({ plain: true }));
+        // const dbRecipientData = await Message.findAll({
+        //     where: {
+        //         sender_id: req.params.recID,
+        //         recipient_id: req.params.sendID,
+        //     },
+        //     include: [User],
+        // });
 
-        res.render('/message', { sendMessage, recMessage, logged_in: req.session.logged_in });
+        const messages = dbMessages.map((mes) => mes.get({ plain: true }));
+
+        // const sendMessage = dbSenderData.map((mes) => mes.get({ plain: true }));
+        // const recMessage = dbRecipientData.map((mes) => mes.get({ plain: true }));
+
+        res.render('message', { messages, logged_in: req.session.logged_in });
 
     } catch (error) {
         console.log(error);
