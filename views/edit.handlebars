@@ -1,6 +1,8 @@
 <div class="container-fluid edit">
     <div class="d-flex flex-row-reverse">
-        <button class="btn" id="back-btn">X</button>
+        <a href="/dashboard">
+            <button class="btn" id="back-btn">X</button>
+        </a>
     </div>
     <form class="form w-100 row" id="edit-profile" data-user-id="{{user.id}}" data-profile-picture="{{user.Profile.picture}}">
         <div style="background-image: url({{user.Profile.picture}}); background-position: center; background-size: cover;" class="user-picture col-12 col-md-3 h-30">
