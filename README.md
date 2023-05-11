@@ -54,16 +54,17 @@ THEN I will see a notification on my profile page
 
 <ul>
 <li> JavaScript
+<li> bcrypt
+<li> bootstrap-icons
+<li> cloudinary
+<li> connect-session-sequelize
+<li> dotenv
 <li> express
 <li> express-handlebars
 <li> express-session
+<li> Heroku
 <li> mysql2
 <li> sequelize
-<li> connect-session-sequelize
-<li> dotenv
-<li> bcrypt
-<li> cloudinary
-<li> Heroku
 </ul>
 
 <!--
