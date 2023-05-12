@@ -388,6 +388,15 @@ body {
     
 }
 
+.user-conversations {
+    text-decoration: none;
+}
+
+.user-conversations-tag {
+    text-decoration: none;
+    color: black;
+}
+
 .message-username {
     background: white;
     font-weight: bold;

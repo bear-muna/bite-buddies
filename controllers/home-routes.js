@@ -187,22 +187,44 @@ router.get('/messages/:sendID/:recID', withAuth, async (req, res) => {
         const dbRecipient = await User.findByPk(req.params.recID, {
             attributes: ['first_name']
         });
+
+        const dbUserMessages = await User.findAll({
+            where: {
+                id: {
+                    [Op.not]: req.session.user_id
+                }
+            },
+            include: [{
+              model: Message,
+              where: {
+                [Op.or]: [
+                    {sender_id: req.session.user_id },
+                    {recipient_id: req.session.user_id }
+                ]
+              },
+              attributes: []
+            }],
+            attributes: { exclude: ['password', 'email'] },
+            distinct: true // this removes duplicate users
+        });
+
         // const dbSenderData = await Message.findAll({
-        //     where: {
-        //         sender_id: req.params.sendID,
-        //         recipient_id: req.params.recID,
-        //     },
-        //     include: [User],
-        // });
-
-        // const dbRecipientData = await Message.findAll({
-        //     where: {
-        //         sender_id: req.params.recID,
-        //         recipient_id: req.params.sendID,
-        //     },
-        //     include: [User],
-        // });
-
+            //     where: {
+                //         sender_id: req.params.sendID,
+                //         recipient_id: req.params.recID,
+                //     },
+                //     include: [User],
+                // });
+                
+                // const dbRecipientData = await Message.findAll({
+                    //     where: {
+                        //         sender_id: req.params.recID,
+                        //         recipient_id: req.params.sendID,
+                        //     },
+                        //     include: [User],
+                        // });
+                        
+        const userMessages = dbUserMessages.map((u) => u.get({ plain: true }));
         const messages = dbMessages.map((mes) => mes.get({ plain: true }));
         const recipient = dbRecipient.get({ plain: true });
         const senderID = req.params.sendID;
@@ -212,8 +234,8 @@ router.get('/messages/:sendID/:recID', withAuth, async (req, res) => {
         // const sendMessage = dbSenderData.map((mes) => mes.get({ plain: true }));
         // const recMessage = dbRecipientData.map((mes) => mes.get({ plain: true }));
 
-        res.render('message', { messages, senderID, recipientID, userID, recipient, logged_in: req.session.logged_in });
-        // res.json({messages, senderID, recipientID, recipient});
+        res.render('message', { messages, senderID, recipientID, userID, recipient, userMessages, logged_in: req.session.logged_in });
+        // res.json({messages, senderID, recipientID, recipient, userMessages});
     } catch (error) {
         console.log(error);
         res.status(500).json({ msg: "Error loading profile", error });

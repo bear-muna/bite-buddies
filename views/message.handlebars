@@ -1,6 +1,12 @@
 <div class="row w-100 d-flex justify-content-between p-2 message-screen">
-    <div class="col-3 d-flex flex-column align-items-center message-convo-screen p-4">
-        
+    <div class="col-3 d-flex flex-column justify-content-between message-convo-screen p-4">
+        {{#each userMessages}}
+            <a class="user-conversations-tag" href="messages/{{@root.userID}}/{{this.id}}">
+                <div class="user-conversations w-100 message-screen">
+                    <h3>{{this.username}}</h3>
+                </div>
+            </a>
+        {{/each}}
     </div>
     <div class="col-9 h-100 d-flex flex-column justify-content-between p-3">    
         <div class="col-1 d-flex text-center message-username w-100 p-2">
