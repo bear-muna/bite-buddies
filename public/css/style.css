@@ -341,6 +341,15 @@ body {
     width: 2em;
 }
 
+/* Message Page */
+.message-screen {
+    border: 2px solid var(--purple);
+}
+
+
+
+
+
  /* media queries */
     /* mobile view */
 @media (min-width: 390px) {

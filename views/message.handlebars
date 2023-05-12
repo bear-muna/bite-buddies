@@ -1,47 +1,25 @@
-<div class="row w-100">
-    <div class="col-3">
-        <p>SIDE BAR FOR ALL MESSAGES</p>
+<div class="row w-100 message-screen gx-4">
+    <div class="col-3 p-4">
+        <nav>
+            <p>SIDE BAR FOR ALL THE CONVERSATIONS</p>
+        </nav>
     </div>
-    <div class="col-8">
-        <div>
+    <div class="col-9 message-screen vh-90 d-flex flex-column justify-content-between p-4">
+        <div class="col-10 d-flex flex-column justify-content-end w-100">
             {{#each messages}}
                 {{> message-details}}
             {{/each}}
         </div>
-        <div>
+        <div class="col-1 message-screen w-100">
+            <hr>
+        </div>
+        <div class="col-1 message-screen d-flex justify-content-end w-100">
             <form id="message-form" data-sender-id="{{senderID}}" data-recipient-id="{{recipientID}}">
-                </div>
-                    <input class="form-input w-100" id="message" type="text" id="email-edit">
-                    <div class="row w-50 align-items-center">
-                        <button class="btn align-self-center send-btn" id="send" type="submit">Send</button>
-                    </div>
-                </div>
+                <input class="form-input w-90" id="message" type="text" id="email-edit">
+                <button class="btn send-btn w-10" id="send" type="submit">Send</button>
             </form>
         </div>
     </div>
 </div>
-
-
-
-<form id="message-form" data-sender-id="{{senderID}}" data-recipient-id="{{recipientID}}">
-    <div>
-    {{#each messages}}
-    {{#if (eq @root.userID this.sender_id)}}
-            {{!-- <div style="color: {{#if (eq this.sender_id senderID)}}green{{else}}blue{{/if}};"> --}}
-            <div style="color: red;">
-                <p>{{this.body}}</p>
-            </div>
-    {{else}}
-    <div style="color: blue;">
-        <p>{{this.body}}</p>
-    {{/if}}
-    {{/each}}
-    </div>
-        <input class="form-input w-100" id="message" type="text" id="email-edit">
-        <div class="row w-50 align-items-center">
-            <button class="btn align-self-center send-btn" id="send" type="submit">Send</button>
-        </div>
-    </div>
-</form>
 
 <script src="/js/message.js"></script>
