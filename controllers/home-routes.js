@@ -124,6 +124,39 @@ router.get('/profiles/:id', async (req, res) => {
     }
 });
 
+// GET all messages for user
+router.get('/messages', withAuth, async (req, res) => {
+    try {
+        // query User to get all messages where sender matches logged in user
+        const dbUserMessages = await User.findAll({
+            where: {
+                id: {
+                    [Op.not]: req.session.user_id
+                }
+            },
+            include: [{
+              model: Message,
+              where: {
+                [Op.or]: [
+                    {sender_id: req.session.user_id },
+                    {recipient_id: req.session.user_id }
+                ]
+              },
+              attributes: []
+            }],
+            attributes: { exclude: ['password'] },
+            distinct: true // this removes duplicate users
+        });
+
+        const userMessages = dbUserMessages.map((u) => u.get({ plain: true }));
+        const userID = req.session.user_id
+        res.render('all-messages', {userMessages, userID, logged_in: req.session.logged_in});
+    } catch (error) {
+        console.log(error);
+        res.status(500).json({ msg: "Error loading profile", error });
+    }
+});
+
 // GET messages between 2 Users
 router.get('/messages/:sendID/:recID', withAuth, async (req, res) => {
     try {
