@@ -1,9 +1,9 @@
 {{#if (eq @root.userID this.sender_id)}}
-        {{!-- <div style="color: {{#if (eq this.sender_id senderID)}}green{{else}}blue{{/if}};"> --}}
-        <div style="color: red;" class="message-screen">
-            <p>{{this.body}}</p>
-        </div>
+    <div style="color: red;" class="col-5 d-flex align-self-end message-screen">
+        <p>Sender: {{this.body}}</p>
+    </div>
 {{else}}
-<div style="color: blue;">
-    <p>{{this.body}}</p>
+<div style="color: blue;" class="col-5 d-flex align-self-start message-screen">
+    <p>Recipient: {{this.body}}</p>
+</div>
 {{/if}}
