@@ -21,6 +21,12 @@
         <img src="/images/Bite_Buddies-transparent.png" alt="bite-buddies">
         <nav class="ms-auto">
           {{#if logged_in}}
+          <a href="/messages/:sendID/:recID">
+            <button class="no-button" id="messages">messages</button>
+          </a>
+          <a href="/dashboard">
+            <button class="no-button" id="dashboard">dashboard</button>
+          </a>
           <button class="no-button" id="logout">logout</button>
           {{else}}
           <a href="/homepage"></a>

@@ -25,7 +25,7 @@
             <div class="form-group">
                 <label for="password-edit" class="edit-label">Edit password:</label> <br>
                 {{!-- isn't this password encrypted? Don't know how to grab the unencrypted password --}}
-                <input class="form-input w-100" type="text" id="password-edit">
+                <input class="form-input w-100" type="password" id="password-edit">
             </div>
             <div class="form-group">
                 <label for="location-edit" class="edit-label">Edit location:</label> <br>
@@ -56,16 +56,14 @@
             <div class="form-group col w-100 cuisine-favs container p-3">
                 <label for="cuisines-edit" class="edit-label">Edit your favorite cuisines!</label> <br>
                 <div class="row checkbox-section">
+                    {{#each user.Cuisines as |u|}}
+                        <div class="form-check col-6 col-md-4 col-lg-3 d-flex align-items-center">
+                            <label for="option" class="form-check-label d-flex justify-content-center">
+                                <input class="form-check-input" type="checkbox" value="{{name}}" data-cuisine-id="{{id}}" checked>{{name}}</input>
+                            </label>
+                        </div>
+                    {{/each}}
                     {{#each cuisine as |c|}}
-                        {{#each @root.user.Cuisines as |u|}}
-                            {{#if (eq c.id u.id)}}
-                                <div class="form-check col-6 col-md-4 col-lg-3 d-flex align-items-center">
-                                    <label for="option" class="form-check-label d-flex justify-content-center">
-                                        <input class="form-check-input" type="checkbox" value="{{name}}" data-cuisine-id="{{id}}" checked>{{name}}</input>
-                                    </label>
-                                </div>
-                            {{/if}}
-                        {{/each}}
                         <div class="form-check col-6 col-md-4 col-lg-3 d-flex align-items-center">
                             <label for="option" class="form-check-label d-flex justify-content-center">
                                 <input class="form-check-input" type="checkbox" value="{{name}}" data-cuisine-id="{{id}}">{{name}}</input>

@@ -12,7 +12,9 @@ body {
     background-color: var(--teal);
 }
 
-#logout {
+#logout,
+#messages,
+#dashboard {
     border: 2px solid var(--dark-pink);
     border-radius: 20px;
     padding: .5em;
@@ -20,7 +22,9 @@ body {
     color: var(--purple);
 }
 
-#logout:hover {
+#logout:hover,
+#messages:hover,
+#dashboard:hover {
     border: 2px solid var(--gold);
     background-color: white;
 }
