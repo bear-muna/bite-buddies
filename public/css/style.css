@@ -359,10 +359,27 @@ body {
     color: black;
     font-weight: bold;
     border: 10px;
+    height: 50%;
 }
 
 .message-button:hover {
     background: var(--dark-pink);
+}
+
+.sender-message {
+    background: var(--gold);
+    color: black;
+    font-weight: bold;
+    border: 2px solid white;
+    border-radius: 10px;
+}
+
+.recipient-message {
+    background: var(--teal);
+    color: black;
+    font-weight: bold;
+    border: 2px solid white;
+    border-radius: 10px;
 }
 
 

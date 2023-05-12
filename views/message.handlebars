@@ -10,18 +10,15 @@
                 {{> message-details}}
             {{/each}}
         </div>
-        <div class="col-1 message-screen w-100">
-            <hr>
-        </div>
-        <div class="col-1 message-screen d-flex justify-content-end w-100">
+        <div class="col-1 message-screen d-flex justify-content-end pt-2 pb-2 w-100">
             <div class="row w-100">
                 <form id="message-form" data-sender-id="{{senderID}}" data-recipient-id="{{recipientID}}">
                     <div class="row d-flex flex-reverse align-items-center w-100 message-screen">
                         <div class="col-11 message-screen d-flex justify-content-end">
                             <input class="message-form-input w-100" id="message" type="text" id="email-edit">
                         </div>
-                        <div class="col-1 d-flex justify-content-center align-items-center">
-                            <button class="btn send-btn w-10 message-button" id="send" type="submit">Send</button>
+                        <div class="col-1 d-flex justify-content-center align-items-center btn-div">
+                            <button class="btn message-button" id="send" type="submit">Send</button>
                         </div>
                     </div>
                 </form>
