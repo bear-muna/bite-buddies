@@ -1,7 +1,11 @@
-{{#each userMessages}}
-<a href="messages/{{@root.userID}}/{{this.id}}">
-    <div>
-        <h3>{{this.username}}</h3>
+<div class="row w-100">
+    <div class="col-12 d-flex flex-column justify-content-start message-convo-screen p-4">
+        {{#each userMessages}}
+        <a class="user-conversations-tag" href="messages/{{@root.userID}}/{{this.id}}">
+            <div class="user-conversations text-center w-100 mt-2 pt-2 message-screen">
+                <h3 class="conversation-names">{{this.first_name}} {{this.last_name}}</h3>
+            </div>
+        </a>
+        {{/each}}
     </div>
-</a>
-{{/each}}
+</div>

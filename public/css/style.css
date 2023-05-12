@@ -338,6 +338,7 @@ body {
 /* Message Page */
 .message-screen {
     border: 2px solid var(--purple);
+    border-radius: 10px;
 }
 
 .message-form-input {
@@ -349,10 +350,60 @@ body {
     color: black;
     font-weight: bold;
     border: 10px;
+    height: 50%;
 }
 
 .message-button:hover {
     background: var(--dark-pink);
+}
+
+.sender-message {
+    background: var(--gold);
+    color: black;
+    font-weight: bold;
+    border: 2px solid white;
+    border-radius: 10px;
+}
+
+.recipient-message {
+    background: white;
+    color: black;
+    font-weight: bold;
+    border: 2px solid var(--gold);
+    border-radius: 10px;
+}
+
+.user-conversations {
+    background: white;
+}
+
+.user-conversations:hover {
+    background: var(--teal);
+}
+
+.user-conversations-tag {
+    text-decoration: none;
+    color: black;
+}
+
+.message-username {
+    background: white;
+    font-weight: bold;
+    border-radius: 10px;
+}
+
+.message-convo-screen {
+    border: 2px solid var(--dark-pink);
+    border-radius: 10px;
+    background: var(--light-pink);
+}
+
+.conversation-names {
+    font-weight: bold;
+}
+
+.current-convo {
+    font-size: 24px;
 }
 
 
