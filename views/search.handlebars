@@ -1,5 +1,18 @@
-<div class="row search w-100 d-flex flex-row justify-content-center align-items-center flex-wrap profile-container">
+<div class="container-fluid">
+  <div class="row justify-content-center search">
     {{#each user}}
-        {{> search-details}}
+    <div class="col-md-3 search-profile-card m-2" data-profile-id="{{id}}">
+      <div class="col-12 d-flex flex-row">
+        <div class="pic-wrapper">
+          <img src={{Profile.picture}} class="dashboard-photo d-flex align-self-center" id="search-picture" alt="profile-pic">
+        </div>
+        <div class="profile-info align-self-center w-100">
+          <p class="search-profile-name">{{first_name}}</p>
+          <p>{{Profile.location}}</p>
+          <a class="view-profile-tag" href="/profiles/{{id}}">View Profile</a>
+        </div>
+      </div>
+    </div> 
     {{/each}}
+  </div>
 </div>

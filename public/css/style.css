@@ -181,56 +181,40 @@ body {
 
   /* search page styling */
 .search-profile-name {
-    font-size: 24px;
-    font-weight: 800;
+    font-size: 150%;
+    font-weight: bold;
 }
 
 .view-profile-tag {
     text-decoration: none;
-    color: black;
-    font-weight: bold;
-    border: 1px solid var(--purple);
-    border-radius: 5px;
-    margin: 2px;
-    padding: 2px;
-    background: white;
-}
-
-.view-profile-tag:hover {
-    color: white;
-    background: var(--teal);
-    box-shadow: 1px 1px var(--purple);
-}
-
-.search-profile-card {
-    background: var(--teal);
-    border: 3px solid var(--purple);
-    border-radius: 15px;
-    transition: all .2s ease-in-out;
-}
-
-.search-profile-card:hover {
-    background: white;
-    font-weight: bold;
-    color: var(--purple);
-    transform: scale(1, 1);
-}
-
-.cuisine-tag {
-    display: inline-block;
-    text-decoration: none;
     color: white;
     font-weight: bold;
-    border: 1px solid var(--purple);
-    border-radius: 5px;
-    margin: 2px;
-    padding: 2px;
+    border: 2px solid var(--purple);
+    border-radius: 10px;
+    padding: 2%;
+    margin: 1%;
     background: var(--purple);
 }
 
-.cuisine-tag:hover {
-    color: black;
-    background: var(--gold);
+.view-profile-tag:hover {
+    color: var(--purple);
+    background: white;
+}
+
+.search-profile-card {
+    box-sizing: content-box;
+    background: white;
+    border: 3px solid var(--light-pink);
+    border-radius: 15px;
+    color: var(--purple);
+    height: fit-content;
+    width: fit-content;
+}
+
+.search-profile-card:hover {
+    background: var(--light-pink);
+    font-weight: bold;
+    color: var(--purple);
 }
 
  /* profile picture styling */
@@ -241,7 +225,6 @@ body {
     height: 18em;
 }
 
-.search-picture,
 .dashboard-photo{
     border: 3px solid var(--purple);
     margin: 3%;
@@ -251,6 +234,13 @@ body {
     border-radius: 50%;
     object-fit: cover;
 } 
+
+#search-picture {
+    object-fit: scale-down;
+    width: 8em;
+    height: 8em;
+    margin-right: 1em;
+}
 
 .user-picture {
     width: 10em;
