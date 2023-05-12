@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const withAuth = require('../utils/auth');
-const {Op} = require('sequelize');
+const { Op, literal } = require('sequelize');
 const { User, Cuisine, Message, Profile, UserCuisine } = require('../models');
 const handlebars = require('handlebars');
 
@@ -71,9 +71,26 @@ router.get('/users/edit', withAuth, async (req, res) => {
         const dbUserData = await User.findByPk(req.session.user_id, {
             include: [Profile, Cuisine]
         });
+        
+        const cuisines = await Cuisine.findAll({
+            include: [{
+              model: User,
+              where: {
+                id: req.session.user_id
+              },
+              attributes: []
+            }]
+          }) 
 
-        // get all cuisines to display in edit page dropdown
-        const dbCuisineData = await Cuisine.findAll();
+        const cuisineIds = cuisines.map(cuisine => cuisine.id);
+
+        const dbCuisineData = await Cuisine.findAll({
+            where: {
+              id: {
+                [Op.notIn]: cuisineIds
+              }
+            }
+          }) 
 
         const cuisine = dbCuisineData.map((u) => u.get({ plain: true }));
         const user = dbUserData.get({ plain: true });
