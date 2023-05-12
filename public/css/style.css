@@ -288,7 +288,7 @@ body {
 }
 
 .dash-messages:hover {
-    color: var(gold);
+    color: var(--gold);
     border: 3px solid var(--gold);
     background-color: white;
 }
