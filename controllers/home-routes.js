@@ -184,6 +184,9 @@ router.get('/messages/:sendID/:recID', withAuth, async (req, res) => {
             order: [['created_at', 'ASC']] // get messages in order of creation date
         });
 
+        const dbRecipient = await User.findByPk(req.params.recID, {
+            attributes: ['first_name']
+        });
         // const dbSenderData = await Message.findAll({
         //     where: {
         //         sender_id: req.params.sendID,
@@ -201,6 +204,7 @@ router.get('/messages/:sendID/:recID', withAuth, async (req, res) => {
         // });
 
         const messages = dbMessages.map((mes) => mes.get({ plain: true }));
+        const recipient = dbRecipient.get({ plain: true });
         const senderID = req.params.sendID;
         const recipientID = req.params.recID;
         const userID = req.session.user_id;
@@ -208,8 +212,8 @@ router.get('/messages/:sendID/:recID', withAuth, async (req, res) => {
         // const sendMessage = dbSenderData.map((mes) => mes.get({ plain: true }));
         // const recMessage = dbRecipientData.map((mes) => mes.get({ plain: true }));
 
-        res.render('message', { messages, senderID, recipientID, userID, logged_in: req.session.logged_in });
-        //res.json({messages, senderID, recipientID});
+        res.render('message', { messages, senderID, recipientID, userID, recipient, logged_in: req.session.logged_in });
+        // res.json({messages, senderID, recipientID, recipient});
     } catch (error) {
         console.log(error);
         res.status(500).json({ msg: "Error loading profile", error });

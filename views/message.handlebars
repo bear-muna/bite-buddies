@@ -1,20 +1,21 @@
-<div class="row w-100 message-screen gx-4">
-    <div class="col-3 p-4">
-        <nav>
-            <p>SIDE BAR FOR ALL THE CONVERSATIONS</p>
-        </nav>
+<div class="row w-100 d-flex justify-content-between p-2 message-screen">
+    <div class="col-3 d-flex flex-column align-items-center message-convo-screen p-4">
+        
     </div>
-    <div class="col-9 message-screen vh-90 d-flex flex-column justify-content-between p-4">
-        <div class="col-10 d-flex flex-column w-100 p-2 message-screen">
+    <div class="col-9 h-100 d-flex flex-column justify-content-between p-3">    
+        <div class="col-1 d-flex text-center message-username w-100 p-2">
+            {{recipient.first_name}}
+        </div>
+        <div class="col-9 d-flex flex-column w-100 p-2">
             {{#each messages}}
                 {{> message-details}}
             {{/each}}
         </div>
-        <div class="col-1 message-screen d-flex justify-content-end pt-2 pb-2 w-100">
+        <div class="col-1 d-flex justify-content-end pt-2 pb-2 w-100">
             <div class="row w-100">
                 <form id="message-form" data-sender-id="{{senderID}}" data-recipient-id="{{recipientID}}">
-                    <div class="row d-flex flex-reverse align-items-center w-100 message-screen">
-                        <div class="col-11 message-screen d-flex justify-content-end">
+                    <div class="row d-flex flex-reverse align-items-center w-100">
+                        <div class="col-11 d-flex justify-content-end">
                             <input class="message-form-input w-100" id="message" type="text" id="email-edit">
                         </div>
                         <div class="col-1 d-flex justify-content-center align-items-center btn-div">

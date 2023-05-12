@@ -348,6 +348,7 @@ body {
 /* Message Page */
 .message-screen {
     border: 2px solid var(--purple);
+    border-radius: 10px;
 }
 
 .message-form-input {
@@ -375,10 +376,26 @@ body {
 }
 
 .recipient-message {
-    background: var(--teal);
+    background: white;
     color: black;
     font-weight: bold;
-    border: 2px solid white;
+    border: 2px solid var(--gold);
+    border-radius: 10px;
+}
+
+.sender-message:hover, 
+.recipient-message:hover {
+    
+}
+
+.message-username {
+    background: white;
+    font-weight: bold;
+    border-radius: 10px;
+}
+
+.message-convo-screen {
+    border: 2px solid var(--dark-pink);
     border-radius: 10px;
 }
 
