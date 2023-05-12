@@ -15,6 +15,18 @@ router.get('/', async (req, res) => {
 // add user's cuisine route
 router.post('/', async (req, res) => {
     try {
+
+        const userCurrentCuisineData = await UserCuisine.findOne({
+            where: {
+                user_id: req.session.user_id,
+                cuisine_id: req.body.cuisine_id
+            }
+        });
+
+        if (userCurrentCuisineData) {
+            return;
+        }
+
         // takes in an array of cuisines once user creates an account
         const userCuisineData = await UserCuisine.create(
             {

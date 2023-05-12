@@ -335,6 +335,27 @@ body {
     width: 2em;
 }
 
+/* Message Page */
+.message-screen {
+    border: 2px solid var(--purple);
+}
+
+.message-form-input {
+    border-radius: 10px;
+}
+
+.message-button {
+    background: var(--light-pink);
+    color: black;
+    font-weight: bold;
+    border: 10px;
+}
+
+.message-button:hover {
+    background: var(--dark-pink);
+}
+
+
  /* media queries */
     /* mobile view */
 @media (min-width: 390px) {

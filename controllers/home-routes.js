@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const withAuth = require('../utils/auth');
-const {Op} = require('sequelize');
+const { Op, literal } = require('sequelize');
 const { User, Cuisine, Message, Profile, UserCuisine } = require('../models');
 const handlebars = require('handlebars');
 
@@ -71,9 +71,26 @@ router.get('/users/edit', withAuth, async (req, res) => {
         const dbUserData = await User.findByPk(req.session.user_id, {
             include: [Profile, Cuisine]
         });
+        
+        const cuisines = await Cuisine.findAll({
+            include: [{
+              model: User,
+              where: {
+                id: req.session.user_id
+              },
+              attributes: []
+            }]
+          }) 
 
-        // get all cuisines to display in edit page dropdown
-        const dbCuisineData = await Cuisine.findAll();
+        const cuisineIds = cuisines.map(cuisine => cuisine.id);
+
+        const dbCuisineData = await Cuisine.findAll({
+            where: {
+              id: {
+                [Op.notIn]: cuisineIds
+              }
+            }
+          }) 
 
         const cuisine = dbCuisineData.map((u) => u.get({ plain: true }));
         const user = dbUserData.get({ plain: true });
@@ -89,7 +106,7 @@ router.get('/profiles/:id', async (req, res) => {
     try {
 
         if (req.session.user_id == req.params.id) {
-            res.redirect('/dashboard');
+            return res.redirect('/dashboard');
         }
 
         const dbUserData = await User.findByPk(req.params.id, {
@@ -101,6 +118,39 @@ router.get('/profiles/:id', async (req, res) => {
         const senderId = req.session.user_id;
 
         res.render('profile', { user, senderId, logged_in: req.session.logged_in });
+    } catch (error) {
+        console.log(error);
+        res.status(500).json({ msg: "Error loading profile", error });
+    }
+});
+
+// GET all messages for user
+router.get('/messages', withAuth, async (req, res) => {
+    try {
+        // query User to get all messages where sender matches logged in user
+        const dbUserMessages = await User.findAll({
+            where: {
+                id: {
+                    [Op.not]: req.session.user_id
+                }
+            },
+            include: [{
+              model: Message,
+              where: {
+                [Op.or]: [
+                    {sender_id: req.session.user_id },
+                    {recipient_id: req.session.user_id }
+                ]
+              },
+              attributes: []
+            }],
+            attributes: { exclude: ['password'] },
+            distinct: true // this removes duplicate users
+        });
+
+        const userMessages = dbUserMessages.map((u) => u.get({ plain: true }));
+        const userID = req.session.user_id
+        res.render('all-messages', {userMessages, userID, logged_in: req.session.logged_in});
     } catch (error) {
         console.log(error);
         res.status(500).json({ msg: "Error loading profile", error });
