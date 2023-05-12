@@ -1,25 +1,25 @@
 # Bite Buddies 🍽️
+![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)
+
 Find a buddy to grab a bite with!
 
+## 📝 Description
+
+Bite Buddies offers a platform for users who are looking for a buddy in their area to grab a bite with. Users can create a profile that includes their name, picture (uploaded with cloudinary), location, bio, favorite cuisines, and availability. By browsing potential dining partners based on cuisine preference, users can view profiles and message potential buddies to schedule a meal.
 
 ## Table of Contents
 
-- [Description](#📝-description)
-    - [User Story](#👤-user-story)
-    - [Acceptance Criteria](#☑️-acceptance-criteria)
+- [User Story](#👤-user-story)
+- [Acceptance Criteria](#☑️-acceptance-criteria)
+- [Usage](#🍲-usage)
+    - [Screenshot](#📸-screenshot)
 - [Technologies Used](#🛠️-technologies-used)
 - [Resources](#📚-resources)
-- [User Experience](#-🤳-user-experience)
-    - [Screenshot](#📸-screenshot)
 - [Links](#🔗-links)
 - [Credits](#💻-credits)
 - [License](#📃-license)
 
 ------------------
-
-## 📝 Description
-
-Bite Buddies offers a platform for users who are looking for a buddy in their area to grab a bite with. Users can create a profile that includes their name, picture (uploaded with cloudinary), location, bio, favorite cuisines, and availability. By browsing potential dining partners based on cuisine preference, users can view profiles and message potential buddies to schedule a meal.
 
 ### 👤 User Story
 ```
@@ -50,6 +50,16 @@ THEN I will see a notification on my profile page
 
 -----------------
 
+## 🍲 Usage
+
+The user can click on the URL in the 'Links' section to access the deployed application. From there, you have the option to log in or sign up and create a new account. If you are creating a new account, along with filling out standard details such as username, email, and password, you can also select your favorite cuisines from a set of checkboxes. Once logged in, you can view your dashboard and click on your favorite cuisines to view other users who also like those cuisines. Clicking on those users profiles allows you to send them a message, which they can respond to. You can click the messages item on your dashboard or in the navigation bar to view all your messages.
+
+### 📸 Screenshot
+
+![Application Screenshot](/public/images/Application-Image.jpeg)
+
+--------------------
+
 ## 🛠️ Technologies Used
 
 <ul>
@@ -67,26 +77,20 @@ THEN I will see a notification on my profile page
 <li> sequelize
 </ul>
 
-<!--
+
 ## 📚 Resources
+
+<ul>
+<li> mysql2: https://www.npmjs.com/package/mysql2
+<li> sequelize: https://www.npmjs.com/package/sequelize
+<li> cloudinary: https://www.npmjs.com/package/cloudinary
+</ul>
 
 ------------------
 
-## 🤳 User Experience
-
-### 📸 Screenshot
-
--------------------
-
 ## 🔗 Links
 
-Deployed Application: 
-
-Repository: https://github.com/bear-muna/bite-buddies
-
--->
-
---------------------
+Here is the link to the deployed application: https://bite-buddies.herokuapp.com/
 
 ## 💻 Credits 
 
@@ -100,4 +104,4 @@ EJ Muna - https://github.com/bear-muna
 
 ## 📃 License
 
-Please refer to the LICENSE in the repo.
+MIT license
