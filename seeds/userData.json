@@ -1,0 +1,115 @@
+[
+    {
+        "username": "amman",
+        "first_name": "Amman",
+        "last_name": "Nega",
+        "password": "password",
+        "email": "amman@gmail.com"
+    },
+    {
+        "username": "ej",
+        "first_name": "EJ",
+        "last_name": "Muna",
+        "password": "password",
+        "email": "ej@gmail.com"
+    },
+    {
+        "username": "anjali",
+        "first_name": "Anjali",
+        "last_name": "Roland",
+        "password": "password",
+        "email": "anjali@gmail.com"
+    },
+    {
+        "username": "joe",
+        "first_name": "Joe",
+        "last_name": "Smith",
+        "password": "password",
+        "email": "joe@gmail.com"
+    },
+    {
+        "username": "henry",
+        "first_name": "Henry",
+        "last_name": "Larrington",
+        "password": "password",
+        "email": "henry@gmail.com"
+    },
+    {
+        "username": "stacy",
+        "first_name": "Stacy",
+        "last_name": "Lacy",
+        "password": "password",
+        "email": "stacy@gmail.com"
+    },
+    {
+        "username": "ron",
+        "first_name": "Ron",
+        "last_name": "Swanson",
+        "password": "password",
+        "email": "ron@gmail.com"
+    },
+    {
+        "username": "leslie",
+        "first_name": "Leslie",
+        "last_name": "Knope",
+        "password": "password",
+        "email": "leslie@gmail.com"
+    },
+    {
+        "username": "ben",
+        "first_name": "Ben",
+        "last_name": "Wyatt",
+        "password": "password",
+        "email": "ben@gmail.com"
+    },
+    {
+        "username": "april",
+        "first_name": "April",
+        "last_name": "Ludgate",
+        "password": "password",
+        "email": "april@gmail.com"
+    },
+    {
+        "username": "tom",
+        "first_name": "Tom",
+        "last_name": "Haverford",
+        "password": "password",
+        "email": "tom@gmail.com"
+    },
+    {
+        "username": "nick",
+        "first_name": "Nick",
+        "last_name": "Miller",
+        "password": "password",
+        "email": "nick@gmail.com"
+    },
+    {
+        "username": "Schmidt",
+        "first_name": "Schmidt",
+        "last_name": "Schmidt",
+        "password": "password",
+        "email": "schmidt@gmail.com"
+    },
+    {
+        "username": "winston",
+        "first_name": "Winston",
+        "last_name": "Bishop",
+        "password": "password",
+        "email": "winston@gmail.com"
+    },
+    {
+        "username": "cece",
+        "first_name": "Cece",
+        "last_name": "Parekh",
+        "password": "password",
+        "email": "cece@gmail.com"
+    },
+    {
+        "username": "jess",
+        "first_name": "Jessica",
+        "last_name": "Day",
+        "password": "password",
+        "email": "jess@gmail.com"
+    }
+    
+]

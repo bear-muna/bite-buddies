@@ -1,0 +1,391 @@
+ /* color variables */
+:root {
+    --dark-pink: #F2ACCD;
+    --light-pink: #F2CEDB;
+    --purple: #A66F97;
+    --teal: #70BBB1;
+    --gold: #D9C179;
+}
+
+/* global styling */
+body {
+    background-color: var(--teal);
+}
+
+#logout,
+#messages,
+#dashboard {
+    border: 2px solid var(--dark-pink);
+    border-radius: 20px;
+    padding: .5em;
+    background-color: var(--teal);
+    color: var(--purple);
+}
+
+#logout:hover,
+#messages:hover,
+#dashboard:hover {
+    border: 2px solid var(--gold);
+    background-color: white;
+}
+
+
+ /* homepage styling */
+.home-card {
+    height: 300%;
+    border: 4px solid var(--purple);
+    border-radius: 30px;
+    padding: 7%;
+    background-color: var(--teal);
+}
+
+.home-card p {
+    color: var(--dark-pink);
+    font-size: 270%;
+    margin: 3%;
+}
+
+.home-card a {
+    background-color: var(--teal);
+    border: 4px solid var(--gold);
+    border-radius: 30px;
+    margin: 2%;
+    padding: 3%;
+    justify-content: space-evenly;
+    color: var(--gold);
+    font-weight: bold;
+}
+
+.home-card a:hover{
+    background-color: white;
+    color: var(--purple);
+}
+
+  /* login styling */
+.login-form {
+    border: 4px solid var(--purple);
+    border-radius: 30px;
+    padding: 2%;
+}
+
+.login-form label {
+    font-weight: bold;
+    font-size: 175%;
+    text-shadow: 2px 2px var(--purple);
+    color: white;
+}
+
+.login-form input {
+    border: 2px solid var(--dark-pink);
+    margin: 1%;
+    min-height: 5vh;
+}
+
+.login-btn{
+    border: 4px solid var(--gold);
+    border-radius: 30px;
+    margin-top: 5%;
+    padding: 2% 3%;
+    font-weight: bold;
+    color: var(--gold);
+    font-size: 150%;
+}
+
+.login-form button:hover,
+.signup-form button:hover{
+    background-color: white;
+    color: var(--purple);
+}
+
+ /* signup/edit styling */
+.signup,
+.dashboard,
+.edit {
+    border: 4px solid var(--light-pink);
+    border-radius: 20px;
+}
+
+.signup .form-group,
+.edit .form-group {
+    margin-top: 0;
+    margin-bottom: 2%;
+    padding: 1%;
+}
+
+.signup input,
+.edit input {
+    border: 3px solid var(--dark-pink);
+    min-height: 5vh;
+}
+
+.signup textarea,
+.edit textarea{
+    border: 3px solid var(--dark-pink);
+    padding: 2%;
+}
+
+.signup-btn,
+.edit-btn{
+    border: 4px solid var(--gold);
+    border-radius: 30px;
+    padding: 2%;
+    font-weight: bold;
+    background-color: var(--light-pink);
+    font-size: 125%;
+    width: 30%;
+    margin-bottom: 1%;
+    color: white;
+}
+
+.signup-btn:hover,
+.edit-btn:hover {
+    border: 4px solid var(--purple);
+    border-radius: 30px;
+    background-color: white;
+    color: var(--purple);
+}
+
+#back-btn,
+#edit-btn {
+    font-weight: 800;
+    color: white;
+    font-size: 150%;
+    margin: 0;
+    padding: 0;
+}
+
+.edit form {
+    padding: 1%;
+}
+
+.signup-label,
+.edit-label {
+    font-weight: bold;
+    font-size: 175%;
+    text-shadow: 1px 1px var(--light-pink);
+    color: var(--purple);
+}
+
+.form-check-input {
+    width: 2em;
+    height: 1em;
+    margin: 2%;
+}
+
+.form-check-label {
+    font-weight: bold;
+    text-shadow: 2px 2px var(--purple);
+    color: white;
+    align-items: center;
+}
+
+  /* search page styling */
+.search-profile-name {
+    font-size: 24px;
+    font-weight: 800;
+}
+
+.view-profile-tag {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    border: 1px solid var(--purple);
+    border-radius: 5px;
+    margin: 2px;
+    padding: 2px;
+    background: white;
+}
+
+.view-profile-tag:hover {
+    color: white;
+    background: var(--teal);
+    box-shadow: 1px 1px var(--purple);
+}
+
+.search-profile-card {
+    background: var(--teal);
+    border: 3px solid var(--purple);
+    border-radius: 15px;
+    transition: all .2s ease-in-out;
+}
+
+.search-profile-card:hover {
+    background: white;
+    font-weight: bold;
+    color: var(--purple);
+    transform: scale(1, 1);
+}
+
+.cuisine-tag {
+    display: inline-block;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    border: 1px solid var(--purple);
+    border-radius: 5px;
+    margin: 2px;
+    padding: 2px;
+    background: var(--purple);
+}
+
+.cuisine-tag:hover {
+    color: black;
+    background: var(--gold);
+}
+
+ /* profile picture styling */
+.pic-wrapper {
+    display: flex;
+    justify-content: center;
+    width: 18em;
+    height: 18em;
+}
+
+.search-picture,
+.dashboard-photo{
+    border: 3px solid var(--purple);
+    margin: 3%;
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 50%;
+    object-fit: cover;
+} 
+
+.user-picture {
+    width: 10em;
+    height: 10em;
+    border-radius: 50%;
+    background-color: var(--light-pink);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2em;
+    color: white;
+    outline: none;
+}
+
+.cloudinary-button {
+    outline: none !important;
+    background-color: var(--light-pink) !important;
+    border: none !important;
+}
+
+ /* dasboard/profile styling */
+.profile-bio {
+    border: 3px solid white;
+    border-radius: 20px;
+    padding: 2%;
+    min-height: 15vh;
+    background-color: var(--purple);
+    color: white;
+}
+
+.profile-availability,
+.dash-messages {
+    border: 3px solid white;
+    border-radius: 20px;
+    padding: 2%;
+    margin: 1%;
+    min-height: 15vh;
+    background-color: var(--gold);
+    color: white;
+}
+
+.dash-messages {
+    margin-top: 0;
+    margin-bottom: 6%;
+}
+
+.dash-messages:hover {
+    color: var(gold);
+    border: 3px solid var(--gold);
+    background-color: white;
+}
+
+.favorite-cuisines {
+    border: 2px solid var(--light-pink);
+    border-radius: 20px;
+    margin: 1%;
+    justify-content: center;
+}
+
+.fav-cuisine {
+    border: 3px solid var(--dark-pink);
+    border-radius: 20px;
+    background-color: var(--dark-pink);
+    color: white;
+    font-weight: bold;
+}
+
+.fav-cuisine:hover {
+    background-color: white;
+    color: var(--dark-pink);
+}
+
+.dashboard h1,
+.other-user h1  {
+    font-weight: bold;
+    font-size: 225%;
+    text-shadow: 3px 3px var(--purple);
+    color: white;
+}
+
+.dashboard h3,
+.other-user{
+    font-weight: bold;
+    font-size: 175%;
+    text-shadow: 1px 1px var(--light-pink);
+    color: var(--purple);
+}
+
+.alert {
+    background-color: var(--dark-pink);
+    height: 2em;
+    width: 2em;
+}
+
+ /* media queries */
+    /* mobile view */
+@media (min-width: 390px) {
+    .login-form {
+        min-width: 100%;
+    }
+    .dashboard-name h1,
+    .dashboard-name h3 {
+        display: flex;
+        justify-content: center;
+    }
+}
+  
+    /* tablet view */
+@media (min-width: 576px) {
+    .login-form {
+        min-width: 100%;
+    }
+    .dashboard-name h1,
+    .dashboard-name h3 {
+        display: flex;
+        justify-content: center;
+    }
+}
+
+    /* tablet view */
+@media (min-width: 768px) {
+    .login-form {
+        min-width: 50%;
+    }
+    .dashboard-name h1,
+    .dashboard-name h3 {
+        display: flex;
+        justify-content: center;
+    }
+}
+  
+    /* average desktop view */
+@media (min-width: 992px) {
+    .login-form {
+        min-width: 50%;
+    }
+}
+
