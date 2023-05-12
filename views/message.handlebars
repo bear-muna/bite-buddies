@@ -14,10 +14,18 @@
             <hr>
         </div>
         <div class="col-1 message-screen d-flex justify-content-end w-100">
-            <form id="message-form" data-sender-id="{{senderID}}" data-recipient-id="{{recipientID}}">
-                <input class="form-input w-90" id="message" type="text" id="email-edit">
-                <button class="btn send-btn w-10" id="send" type="submit">Send</button>
-            </form>
+            <div class="row w-100">
+                <form id="message-form" data-sender-id="{{senderID}}" data-recipient-id="{{recipientID}}">
+                    <div class="row d-flex flex-reverse align-items-center w-100 message-screen">
+                        <div class="col-11 message-screen d-flex justify-content-end">
+                            <input class="message-form-input w-100" id="message" type="text" id="email-edit">
+                        </div>
+                        <div class="col-1 d-flex justify-content-center align-items-center">
+                        <button class="btn send-btn w-10 message-button" id="send" type="submit">Send</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
 </div>
