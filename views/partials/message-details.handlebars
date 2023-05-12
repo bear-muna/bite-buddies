@@ -1,9 +1,9 @@
 {{#if (eq @root.userID this.sender_id)}}
     <div class=" d-flex justify-content-end align-self-end h-10 m-2 p-2 sender-message">
-        Sender: {{this.body}}
+        {{this.body}}
     </div>
 {{else}}
     <div class=" d-flex justify-content-start align-self-start h-10 m-2 p-2 recipient-message">
-        Recipient: {{this.body}}
+        {{this.body}}
     </div>
 {{/if}}

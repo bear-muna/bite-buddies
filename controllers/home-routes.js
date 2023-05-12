@@ -185,7 +185,7 @@ router.get('/messages/:sendID/:recID', withAuth, async (req, res) => {
         });
 
         const dbRecipient = await User.findByPk(req.params.recID, {
-            attributes: ['first_name']
+            attributes: ['first_name', 'last_name']
         });
 
         const dbUserMessages = await User.findAll({

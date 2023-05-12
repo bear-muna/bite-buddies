@@ -373,13 +373,12 @@ body {
     border-radius: 10px;
 }
 
-.sender-message:hover, 
-.recipient-message:hover {
-    
+.user-conversations {
+    background: white;
 }
 
-.user-conversations {
-    text-decoration: none;
+.user-conversations:hover {
+    background: var(--teal);
 }
 
 .user-conversations-tag {
@@ -396,6 +395,15 @@ body {
 .message-convo-screen {
     border: 2px solid var(--dark-pink);
     border-radius: 10px;
+    background: var(--light-pink);
+}
+
+.conversation-names {
+    font-weight: bold;
+}
+
+.current-convo {
+    font-size: 24px;
 }
 
 
