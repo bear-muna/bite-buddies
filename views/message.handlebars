@@ -1,22 +1,33 @@
-<form id="message-form" data-sender-id="{{senderID}}" data-recipient-id="{{recipientID}}">
-    <div>
-    {{#each messages}}
-    {{#if (eq @root.userID this.sender_id)}}
-            {{!-- <div style="color: {{#if (eq this.sender_id senderID)}}green{{else}}blue{{/if}};"> --}}
-            <div style="color: red;">
-                <p>{{this.body}}</p>
-            </div>
-    {{else}}
-    <div style="color: blue;">
-        <p>{{this.body}}</p>
+<div class="row w-100 message-screen gx-4">
+    <div class="col-3 p-4">
+        <nav>
+            <p>SIDE BAR FOR ALL THE CONVERSATIONS</p>
+        </nav>
     </div>
-    {{/if}}
-    {{/each}}
-        <input class="form-input w-100" id="message" type="text" id="email-edit">
-        <div class="row w-50 align-items-center">
-            <button class="btn align-self-center send-btn" id="send" type="submit">Send</button>
+    <div class="col-9 message-screen vh-90 d-flex flex-column justify-content-between p-4">
+        <div class="col-10 d-flex flex-column w-100 p-2 message-screen">
+            {{#each messages}}
+                {{> message-details}}
+            {{/each}}
+        </div>
+        <div class="col-1 message-screen w-100">
+            <hr>
+        </div>
+        <div class="col-1 message-screen d-flex justify-content-end w-100">
+            <div class="row w-100">
+                <form id="message-form" data-sender-id="{{senderID}}" data-recipient-id="{{recipientID}}">
+                    <div class="row d-flex flex-reverse align-items-center w-100 message-screen">
+                        <div class="col-11 message-screen d-flex justify-content-end">
+                            <input class="message-form-input w-100" id="message" type="text" id="email-edit">
+                        </div>
+                        <div class="col-1 d-flex justify-content-center align-items-center">
+                            <button class="btn send-btn w-10 message-button" id="send" type="submit">Send</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
-</form>
+</div>
 
 <script src="/js/message.js"></script>
