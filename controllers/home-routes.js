@@ -106,7 +106,7 @@ router.get('/profiles/:id', async (req, res) => {
     try {
 
         if (req.session.user_id == req.params.id) {
-            res.redirect('/dashboard');
+            return res.redirect('/dashboard');
         }
 
         const dbUserData = await User.findByPk(req.params.id, {
