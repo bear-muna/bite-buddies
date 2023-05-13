@@ -373,6 +373,15 @@ body {
     border-radius: 10px;
 }
 
+.recipient-name {
+    text-decoration: none;
+    color: black;
+}
+
+.recipient-name:hover {
+    color: var(--teal);
+}
+
 .user-conversations {
     background: white;
 }
