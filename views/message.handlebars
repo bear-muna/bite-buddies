@@ -1,5 +1,5 @@
-<div class="row w-100 d-flex justify-content-between p-2 message-screen">
-    <div class="col-3 d-flex flex-column justify-content-start message-convo-screen p-4">
+<div class="row w-100 d-flex justify-content-between p-2 message-screen message-container">
+    <div class="col-lg-3 col-12 d-flex flex-column justify-content-start message-convo-screen p-4">
         {{#each userMessages}}
             <a class="user-conversations-tag" href="/messages/{{@root.senderID}}/{{this.id}}">
                 <div class="user-conversations text-center w-100 mt-2 pt-2 message-screen">
@@ -8,25 +8,25 @@
             </a>
         {{/each}}
     </div>
-    <div class="col-9 h-100 d-flex flex-column justify-content-between p-3">    
+    <div class="col-lg-9 col-12 h-100 d-flex flex-column justify-content-between p-3">    
         <a class="recipient-name" href="/profiles/{{recipientID}}">
-            <div class="col-1 d-flex justify-content-center align-items-center message-username w-100 p-2">
+            <div class="col-lg-1 col-12 d-flex justify-content-center align-items-center message-username w-100 p-2">
                 <h3 class="conversation-names current-convo">{{recipient.first_name}} {{recipient.last_name}}</h3>
             </div>
         </a>
-        <div class="col-9 d-flex flex-column w-100 p-2">
+        <div class="col-lg-9 col-12 d-flex flex-column w-100 p-2">
             {{#each messages}}
                 {{> message-details}}
             {{/each}}
         </div>
-        <div class="col-1 d-flex justify-content-end pt-2 pb-2 w-100">
+        <div class="col-lg-1 col-12 d-flex justify-content-end pt-2 pb-2 w-100">
             <div class="row w-100">
                 <form id="message-form" data-sender-id="{{senderID}}" data-recipient-id="{{recipientID}}">
                     <div class="row d-flex flex-reverse align-items-center w-100">
-                        <div class="col-11 d-flex justify-content-end">
+                        <div class="col-lg-11 col-12 d-flex justify-content-end">
                             <input class="message-form-input p-2 w-100" id="message" type="text" id="email-edit">
                         </div>
-                        <div class="col-1 d-flex justify-content-center align-items-center btn-div">
+                        <div class="col-lg-1 col-12 d-flex justify-content-center align-items-center btn-div">
                             <button class="btn message-button" id="send" type="submit">Send</button>
                         </div>
                     </div>
