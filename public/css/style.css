@@ -418,7 +418,7 @@ body {
 
  /* media queries */
     /* mobile view */
-@media (min-width: 390px) {
+@media (max-width: 576px) {
     .login-form {
         min-width: 100%;
     }
@@ -427,10 +427,13 @@ body {
         display: flex;
         justify-content: center;
     }
+    /* .message-container {
+        flex-direction: column-reverse;
+    } */
 }
   
     /* tablet view */
-@media (min-width: 576px) {
+@media (max-width: 768px) {
     .login-form {
         min-width: 100%;
     }
@@ -442,7 +445,7 @@ body {
 }
 
     /* tablet view */
-@media (min-width: 768px) {
+@media (max-width: 992px) {
     .login-form {
         min-width: 50%;
     }
@@ -451,12 +454,15 @@ body {
         display: flex;
         justify-content: center;
     }
+    .message-container {
+        flex-direction: column-reverse;
+    }
 }
   
-    /* average desktop view */
+    /* average desktop view
 @media (min-width: 992px) {
     .login-form {
         min-width: 50%;
     }
-}
+} */
 
